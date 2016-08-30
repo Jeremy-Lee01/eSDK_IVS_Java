@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/demo.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/demo.js"></script>
+<script type="text/javascript">
+function buttonTypeChange()
+{
+	if(document.getElementById('stop').checked == true){
+		document.getElementById('recordTime').disabled = true;
+		document.getElementById('platformRecord').value = "stopPlatformRecord";
+		document.getElementById('recordTime').value = "";
+	}else{
+		document.getElementById('recordTime').disabled = false;
+		document.getElementById('platformRecord').value = "startPlatformRecord";
+	}
+}
+
+window.onload=function(){
+	document.getElementById('start').checked = true;
+	document.getElementById('cameraCode').value = "";
+	document.getElementById('recordTime').value = "";
+	document.getElementById('platTextarea').innerHTML ="结果显示区";
+}
+</script>
+<title>eSDK IVS Try Demo</title>
+</head>
+<body>
+	<div class="header" style="margin-top:10%;">
+		<h3>start OR stop PlatformRecord</h3>
+	</div>
+	<div class="content">
+		<div class="item1">
+			<label>buttonType:</label>
+			<input type="radio" id="start" name="buttonType" value="1" onchange="buttonTypeChange()" checked>startPlatformRecord &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" id="stop" name="buttonType" value="2" onchange="buttonTypeChange()">stopPlatformRecord
+		</div>
+		<div class="item">
+			<label>cameraCode:</label><input id="cameraCode" type="text" value="">
+		</div>
+		<div class="item">
+			<label>recordTime:</label><input id="recordTime" type="text" value="">
+		</div>
+	</div>
+
+	<div class="footer">
+		<input type="button" id="platformRecord" value="startPlatformRecord" onclick="platformRecord()">
+		<textarea id="platTextarea" rows="" cols="">结果显示区</textarea>
+		<br>
+	</div>
+
+</body>
+</html>

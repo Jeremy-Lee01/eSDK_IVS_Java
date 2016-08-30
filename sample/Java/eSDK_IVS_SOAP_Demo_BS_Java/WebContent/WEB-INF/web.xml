@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>eSDK_IVS_SOAP_Demo_BS_Java</display-name>
+  <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+	<servlet-name>addUser</servlet-name>
+	<servlet-class>com.huawei.esdk.ivs.test.servlet.AddUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>addUser</servlet-name>
+	<url-pattern>/addUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>getDeviceList</servlet-name>
+	<servlet-class>com.huawei.esdk.ivs.test.servlet.GetDeviceList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>getDeviceList</servlet-name>
+	<url-pattern>/getDeviceList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>platformRecord</servlet-name>
+	<servlet-class>com.huawei.esdk.ivs.test.servlet.PlatformRecord</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>platformRecord</servlet-name>
+	<url-pattern>/platformRecord</url-pattern>
+  </servlet-mapping>
+</web-app>

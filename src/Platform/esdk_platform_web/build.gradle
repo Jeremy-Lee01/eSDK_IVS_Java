@@ -1,0 +1,68 @@
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+ext.zipFileName = 'platform-openapi'
+
+addDependentProject(project, "compile", "esdk_platform_common")
+addDependentProject(project, "compile", "esdk_platform_interface")
+addDependentProject(project, "compile", "esdk_platform_impl")
+
+dependencies {
+	compile ':servlet-api'
+	compile ':log4j:1.2.16'
+	compile ':org.restlet:'
+	compile ':javax.ws.rs:'
+	compile ':org.restlet.ext.jaxrs:'
+	compile ':org.restlet.ext.crypto:'
+}
+
+war {
+	from 'WebContent'
+}
+
+preZipComponent << {
+	def fileName = "$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_tools/release_package/temp.txt"
+	File f = new File(fileName)
+	def tempStr = f.getText()
+	if ('sms' == tempStr) {
+		copy {
+			from (project.file("conf4build/sms/conf"))
+			into project.file("build/zipTemp/esdk/webcontent/conf")
+		}
+		copy {
+			from (project.file("conf4build/sms/src/main/resources"))
+			into project.file("build/zipTemp/esdk/webcontent/WEB-INF/classes")
+		}
+		copy {
+			from (project.file("conf4build/sms/WEB-INF"))
+			into project.file("build/zipTemp/esdk/webcontent/WEB-INF")
+		}
+	} else if('sso' == tempStr) {
+		copy {
+			from (project.file("conf4build/sso/conf"))
+			into project.file("build/zipTemp/esdk/webcontent/conf")
+		}
+		copy {
+			from (project.file("conf4build/sso/WEB-INF"))
+			into project.file("build/zipTemp/esdk/webcontent/WEB-INF")
+		}
+	}
+	
+	def tpoaFileNameTemp = "$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_tools/release_package/temp2.txt"
+	File tempTPOA2 = new File(tpoaFileNameTemp)
+	def tempTPOAStr2 = tempTPOA2.getText()
+
+	copy {
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_common/build/libs")
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_srv/build/libs")
+		if (tempTPOAStr2 != 'tpoa') {
+			from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_soap_srv/build/libs")
+			from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_rest_srv/build/libs")
+		}
+
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_plugin_interface/build/libs")
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_plugin_manager/build/libs")
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/source/esdk_platform_plugin_domain/build/libs")
+		into project.file("build/zipTemp/esdk/webcontent/WEB-INF/lib")
+	}
+}

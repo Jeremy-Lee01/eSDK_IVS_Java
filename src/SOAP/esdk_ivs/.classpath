@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/log4j-1.2.16.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/esdk_ivs_base"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/esdk_platform_interface"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/esdk_platform_common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/esdk_ivs_domain"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-core-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

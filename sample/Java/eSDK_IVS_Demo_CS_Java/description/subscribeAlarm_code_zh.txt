@@ -1,0 +1,379 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='tab-interval:21.0pt'>
+
+<p style="font-weight: bold;">SubscribeAlarmBtnActionImpl.java</p>
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><span lang=EN-US>package com.huawei.esdk.csdemo.action.impl;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.csdemo.action.DemoAction;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.csdemo.common.PropertiesUtils;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.csdemo.common.ServiceFactory;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.csdemo.convert.AlarmManagerConvert;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.ivs.professional.local.bean.AlarmEvent;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.ivs.professional.local.bean.IVSSDKResponse;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import com.huawei.esdk.ivs.professional.local.service.alarmmanager.AlarmManagerServiceEx;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>import
+com.huawei.esdk.ivs.professional.local.service.common.CommonServiceEx;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>public class GetAlarmEventBtnActionImpl
+implements DemoAction</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp; @Override</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp; public void executeNativeMethod()</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>初始化公共服务</span> <span style='font-family:
+宋体'>，该服务中包含</span><span lang=EN-US>login</span><span style='font-family:宋体'>，</span><span
+lang=EN-US>logout</span><span style='font-family:宋体'>等接口</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CommonServiceEx commonService =
+ServiceFactory.getInstance().getCommonServiceEx();</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>初始化告警管理服务，该服务中包含告警管理的相关接口</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AlarmManagerServiceEx alarmManagerService = ServiceFactory.getInstance().getAlarmManagerServiceEx();</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>登录成功后才能调用其他接口</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+int loginErrorCode =</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+commonService.login(PropertiesUtils.getValue(&quot;userName&quot;),
+PropertiesUtils.getValue(&quot;password&quot;));</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (0 != loginErrorCode)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AlarmManagerConvert.loginFailInGetAlarmEventFrame(loginErrorCode);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>设置入参</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+StringBuffer alarmEventId = new StringBuffer();</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+StringBuffer alarmInCode = new StringBuffer();</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>从面板中拿到所有参数</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AlarmManagerConvert.getParametersFromGetAlarmEventFrame(alarmEventId,
+alarmInCode);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>调用</span><span lang=EN-US>getAlarmEventInfo
+native</span><span style='font-family:宋体'>接口。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>返回查询结果，</span><span lang=EN-US>result</span><span
+style='font-family:宋体'>包含错误码及查询信息</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IVSSDKResponse&lt;AlarmEvent&gt; result =</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alarmManagerService.getAlarmEventInfo(Long.parseLong(alarmEventId.toString()),
+alarmInCode.toString());</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//</span><span style='font-family:宋体'>把返回结果渲染到面板中</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AlarmManagerConvert.showResultInGetAlarmEventFrame(result);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; commonService.logout();</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+</div>
+
+<p style="font-weight: bold;">ServiceFactory.java</p>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>package
+com.huawei.esdk.csdemo.common;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>import
+com.huawei.esdk.ivs.professional.local.ServiceFactoryEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>import
+com.huawei.esdk.ivs.professional.local.service.alarmmanager.AlarmManagerServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>import
+com.huawei.esdk.ivs.professional.local.service.common.CommonServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>import
+com.huawei.esdk.ivs.professional.local.service.devicemanager.DeviceManagerServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>public
+class ServiceFactory {</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+//native</span><span style='font-size:11.0pt;font-family:宋体;color:black;
+layout-grid-mode:both'>服务单例</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; private
+static ServiceFactory instance;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; //</span><span
+style='font-size:11.0pt;font-family:宋体;color:black;layout-grid-mode:both'>公用管理模块服务接口</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; private
+CommonServiceEx commonServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; //
+</span><span style='font-size:11.0pt;font-family:宋体;color:black;layout-grid-mode:
+both'>告警管理模块服务接口</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; private
+AlarmManagerServiceEx alarmManagerServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+// </span><span style='font-size:11.0pt;font-family:宋体;color:black;layout-grid-mode:
+both'>设备管理模块服务接口</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; private
+DeviceManagerServiceEx deviceManagerServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; private
+ServiceFactory()</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+// </span><span style='font-size:11.0pt;font-family:宋体;color:black;layout-grid-mode:
+both'>从</span><span lang=EN-US style='font-size:11.0pt;font-family:Consolas;
+color:black;layout-grid-mode:both'>native</span><span style='font-size:11.0pt;
+font-family:宋体;color:black;layout-grid-mode:both'>包中</span><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>ServiceFactoryEx</span><span
+style='font-size:11.0pt;font-family:宋体;color:black;layout-grid-mode:both'>类中获取相应的服务</span><span
+lang=EN-US style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:
+both'> </span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+commonServiceEx = ServiceFactoryEx.getService(CommonServiceEx.class);</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+alarmManagerServiceEx =
+ServiceFactoryEx.getService(AlarmManagerServiceEx.class);</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+deviceManagerServiceEx = ServiceFactoryEx.getService(DeviceManagerServiceEx.class);</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; //</span><span
+style='font-size:11.0pt;font-family:宋体;color:black;layout-grid-mode:both'>获取</span><span
+lang=EN-US style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:
+both'>native</span><span style='font-size:11.0pt;font-family:宋体;color:black;
+layout-grid-mode:both'>服务单例</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; public
+static ServiceFactory getInstance()</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(null
+== instance)</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instance
+= new ServiceFactory();</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+instance;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+public CommonServiceEx getCommonServiceEx()</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+{</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return commonServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+}</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+public AlarmManagerServiceEx getAlarmManagerServiceEx()</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+{</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return alarmManagerServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+}</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+public DeviceManagerServiceEx getDeviceManagerServiceEx()</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+{</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return deviceManagerServiceEx;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>&nbsp;&nbsp;&nbsp;
+}</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span lang=EN-US
+style='font-size:11.0pt;font-family:Consolas;color:black;layout-grid-mode:both'>}</span></p>
+
+</div>
+
+</body>
+
+</html>

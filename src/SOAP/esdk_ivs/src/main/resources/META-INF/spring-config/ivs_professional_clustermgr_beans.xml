@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop   
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName">
+	
+	<!-- CXF 实现bean -->
+	<bean id="ivsProfessionalClusterManager"
+		class="com.huawei.esdk.ivs.northcommu.cxf.professional.IVSProfessionalClusterManagerImpl"
+		lazy-init="false">
+		<property name="clusterService" ref="clusterService"></property>
+		<property name="ivsProfessionalClusterManagerConvert" ref="ivsProfessionalClusterManagerConvert"></property>
+	</bean>
+	
+	<!-- service 相关bean -->
+	<bean id="clusterService"
+		class="com.huawei.esdk.ivs.business.professional.clustermgr.ClusterService"
+		lazy-init="false">
+	</bean>
+
+    <!-- convert bean -->
+	<bean id="ivsProfessionalClusterManagerConvert"
+		class="com.huawei.esdk.ivs.northcommu.cxf.professional.convert.IVSProfessionalClusterManagerConvert"
+		lazy-init="false">
+	</bean>
+</beans>

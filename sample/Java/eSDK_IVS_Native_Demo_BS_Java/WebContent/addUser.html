@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/demo.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/demo.js"></script>
+<title>eSDK IVS Try Demo</title>
+<script type="text/javascript">
+	
+</script>
+<style type="text/css">
+.header {
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.footer {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin: 30px 0;
+}
+
+.content {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.item {
+	text-align: center;
+	padding: 20px;
+	float: left;
+	width: 40%;
+}
+
+.item label {
+	width: 40%;
+	display: inline-block;
+}
+
+.item input {
+	width: 40%;
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h3>Add User</h3>
+	</div>
+	<div class="content">
+		<div class="item">
+			<label>DomainCode:</label><input id="domainCode" type="text" value="">
+		</div>
+		<div class="item">
+			<label>IsFirstLogin:</label><input id="isFirstLogin" type="text" value="">
+		</div>
+		<div class="item">
+			<label>RoleId:</label><input id="roleId" type="text" value="">
+		</div>
+		<div class="item">
+			<label>GroupId:</label><input id="groupId" type="text" value="">
+		</div>
+		<div class="item">
+			<label>LoginName:</label><input id="loginName" type="text" value="">
+		</div>
+		<div class="item">
+			<label>Password:</label><input id="password" type="text" value="">
+		</div>
+		<div class="item">
+			<label>PwdModifyDate:</label><input id="pwdModifyDate" type="text" value="">
+		</div>
+		<div class="item">
+			<label>UserType:</label><input id="userType" type="text" value="">
+		</div>
+		<div class="item">
+			<label>UserDomain:</label><input id="userDomain" type="text" value="">
+		</div>
+		<div class="item">
+			<label>Status:</label><input id="status" type="text" value="">
+		</div>
+		<div class="item">
+			<label>RegisterDate:</label><input id="registerDate" type="text" value="">
+		</div>
+		<div class="item">
+			<label>UserDesc:</label><input id="userDesc" type="text" value="">
+		</div>
+		<div class="item">
+			<label>PtzLevel:</label><input id="ptzLevel" type="text" value="">
+		</div>
+		<div class="item">
+			<label>MaxSessionCount:</label><input id="maxSessionCount" type="text" value="">
+		</div>
+		<div class="item">
+			<label>MaxVideoCount:</label><input id="maxVideoCount" type="text" value="">
+		</div>
+		<div class="item">
+			<label>LockTime:</label><input id="lockTime" type="text" value="">
+		</div>
+		<div class="item">
+			<label>UserName:</label><input id="userName" type="text" value="">
+		</div>
+		<div class="item">
+			<label>Phone:</label><input id="phone" type="text" value="">
+		</div>
+		<div class="item">
+			<label>Sex:</label><input id="sex" type="text" value="">
+		</div>
+		
+		<div class="item">
+			<label>validDateFlag:</label><input id="validDateFlag" type="text" value="">
+		</div>
+		
+		<div class="item">
+			<label>Reserve:</label><input id="reserve" type="text" value="">
+		</div>
+		<div class="item">
+			<label>Mail:</label><input id="mail" type="text" value="">
+		</div>
+	</div>
+
+	<div class="footer">
+		<input type="button" value="addUser" onclick="addUser()">
+		<textarea id="addUserTextarea" rows="" cols="">结果显示区</textarea>
+	</div>
+
+</body>
+</html>

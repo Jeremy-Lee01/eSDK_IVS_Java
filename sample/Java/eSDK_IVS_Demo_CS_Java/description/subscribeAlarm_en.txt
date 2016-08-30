@@ -1,0 +1,446 @@
+<html>
+  <head>
+
+  </head>
+  <body style="width:100%;">
+<div id="getalarmeventinfo_desc">
+<p style="font-weight: bold;" id="getAlarmEventInfoDesc">This is used to subscribe alarm</p>
+<div class="description_input_div">
+	<p style="font-weight: bold;" id="inputParameterDesc">input parameters description:</p>
+	<table border="1"  style="width:100%;border-collapse: collapse;">
+		<tbody><tr style="background-color: #E7E7E7;">
+			<td width="25%"><p >parameter</p></td>
+			<td width="18%"><p >type</p></td>
+			<td width="18%"><p >restriction</p></td>
+			<td><p >description</p></td>
+		</tr>
+		<tr>
+			<td>requestXML</td>
+			<td>String</td>
+			<td>1</td>
+			<td><p id="alarmEventIdInputTd">subscribe alarm request XML</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="description_output_div">
+	<p style="font-weight: bold;" id="outputParameterDesc">output parameters description:</p>
+	<table border="1"  style="width:100%;">
+		<tbody><tr style="background-color: #E7E7E7;">
+			<td width="25%"><p >parameter</p></td>
+			<td width="18%"><p >type</p></td>
+			<td width="18%"><p >restriction</p></td>
+			<td><p >description</p></td>
+		</tr>
+		<tr>
+			<td>resultCode</td>
+			<td>int</td>
+			<td>1</td>
+			<td><p id="resultCodeTd">for successful return zero, and failed return other codes</p></td>
+		</tr>
+	</tbody></table>
+	<p style="font-weight: bold;" id="getAlarmEventInfoDesc">Alarms subscription request XML</p>
+		<table border="1" style="width: 100%; border-collapse: collapse;">
+			<thead>
+				<tr>
+					<td width="15%" colspan=6>
+						<p class=TableHeading>
+							<span>attribute</span><span lang=EN-US><o:p></o:p></span>
+						</p>
+					</td>
+					<td width="7%">
+						<p class=TableHeading>
+							<span lang=EN-US>M/O<o:p></o:p></span>
+						</p>
+					</td>
+					<td width="76%">
+						<p class=TableHeading>
+							<span>description</span><span lang=EN-US><o:p></o:p></span>
+						</p>
+					</td>
+				</tr>
+			</thead>
+			<tr style='mso-yfti-irow: 1'>
+				<td width="15%" colspan=6>
+					<p class=TableText>
+						<span lang=EN-US>Content<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Message Body root node</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 2'>
+				<td width="1%" rowspan=14>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="14%" colspan=5>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>DomainCode</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Message target domain, for example:</span><span lang=EN-US>6bdacabae9c546e9ab5b8688ccd85a59</span><span>，length limit</span><span
+							lang=EN-US>32</span><span>bytes</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 3'>
+				<td width="14%" colspan=5>
+					<p class=TableText>
+						<span lang=EN-US>Subscribe<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Alarm subscription information</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 4'>
+				<td width="1%" rowspan=12>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="13%" colspan=4>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscriberInfo</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Subscription Information:</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>If you are the domain of the user, indicating that subscribe to all device alarm, the target device can be oriented domain visibility of this user</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>If you are outside the domain, indicating to the extracellular domain registration. Subscribe to this domain user is different, the target device visibility device for Outland</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 5'>
+				<td width="1%" rowspan=3>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span lang=EN-US>Subscriber<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Subscribers:</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>1-</span><span>The domain user</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>2-</span><span>Outland (inter-domain subscription)</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 6'>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscriberID</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Subscribers</span><span lang=EN-US>ID</span><span>：</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>Subscribers are for users of this domain user</span><span lang=EN-US>ID<o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>Subscriber is outside the domain users outside the domain</span><span lang=EN-US>ID</span><span>,that request domain Internet domain coding</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 7'>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>UserDomainCode</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>The user's domain coding</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 8'>
+				<td width="13%" colspan=4>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscribeList</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Alarm subscription list. Did not subscribe to the node indicates any alarms that alert subscription Cancel</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 9'>
+				<td width="1%" rowspan=7>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscribeInfo</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Single alert subscription information</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 10'>
+				<td width="1%" rowspan=6>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmInCode</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Alarm source code, without this node or the node is null, indicating that all equipment alarms subscription</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 11'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscribeType</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Subscription:</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>1-</span><span>All</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>2-</span><span>By alarm type</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>3-</span><span>Press the warning level</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 12'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmLevelValueMin</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Lower limit alarm level. Subscribe way“</span><span lang=EN-US>3-</span><span>Press the alarm level "must have the node, the node can not have other types of</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 13'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmLevelValueMax</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Limits on the warning level. Subscribe way“</span><span lang=EN-US>3-</span><span>Press the alarm level "must have the node, the node can not have other types of</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 14'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmTypeList</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>A list of alarm types. When the subscription for“</span><span lang=EN-US>2-</span><span>By alarm type ", you must have the node</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<p class=TableText>
+					<span lang=EN-US><o:p>&nbsp;</o:p></span>
+				</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmType</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>Alarm type. When there is an alarm type list of nodes, at least one alarm type node</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<![if !supportMisalignedColumns]>
+			<tr height=0>
+				<td width=15 style='border: none'></td>
+				<td width=15 style='border: none'></td>
+				<td width=15 style='border: none'></td>
+				<td width=17 style='border: none'></td>
+				<td width=33 style='border: none'></td>
+				<td width=106 style='border: none'></td>
+				<td width=47 style='border: none'></td>
+				<td width=281 style='border: none'></td>
+			</tr>
+			<![endif]>
+		</table>
+</div>
+
+</div>
+</body>
+</html>

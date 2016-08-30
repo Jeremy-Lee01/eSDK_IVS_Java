@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<Log>
+  <LogBasePath>../log/sdk</LogBasePath>
+  <ModuleType>IVS_SDK</ModuleType>                    <!-- �ڲ�ģ����� -->
+  <NodeCode></NodeCode>                        <!-- �ڲ�ģ���� -->
+  <LogBufferEnable>True</LogBufferEnable>        <!-- д��־��ʽ�ǻ��滹��ֱ��д��trueΪͨ��棩��ֻ��run��dbg��־��Ч -->
+  <IsBufferDebugLog>True</IsBufferDebugLog>      <!-- �ÿ���ֻ��debug��־���˵�ʱ������ã�ϵͳ�Ỻ��n����nΪ��һ���������־�������ֽ���������־ʱ��ѻ������־��� -->
+  <BufferNumber>100</BufferNumber> 
+  <RunLog>
+    <FileNumber>10</FileNumber>
+    <FileSize>20</FileSize>
+  </RunLog>
+  <DebugLog>
+    <DebugLogSwitch>True</DebugLogSwitch>
+    <FileNumber>15</FileNumber>
+    <FileSize>20</FileSize>
+  </DebugLog>
+  <InterfaceLog>
+    <FileNumber>5</FileNumber>
+    <FileSize>10</FileSize>
+  </InterfaceLog>
+  <SecurityLog>
+    <SecurityLogSwitch>false</SecurityLogSwitch> <!--��ȫ��־���أ�falseΪ������-->
+    <FileNumber>5</FileNumber>
+    <FileSize>10</FileSize>
+  </SecurityLog>
+  <OperationLog>
+    <OperationLogSwitch>false</OperationLogSwitch> <!--��ȫ��־���أ�falseΪ������-->
+    <FileNumber>5</FileNumber>
+    <FileSize>10</FileSize>
+  </OperationLog>
+  <SftpServerInfo>
+    <WorkSpace></WorkSpace>                       <!-- �����ļ���һ��Ŀ¼, ��ʱ��֧�ֶ༶Ŀ¼, ���������򲻱�����־ -->
+    <ServerAddr>192.168.234.89</ServerAddr>          <!-- ������־��SFTP�������ĵ�ַ -->
+    <ServerPort>22</ServerPort>                   <!-- ������־��SFTP�������Ķ˿� -->
+    <Username>root</Username>                     <!-- ����SFTP���������û��� -->
+    <Password>jDLanV7f9qp4chy7l2NmDw==</Password> <!-- ����SFTP������������, ��Ϊ���ܹ���, ������Կ��: ��Կ���ܱ� -->
+  </SftpServerInfo>
+</Log>
+

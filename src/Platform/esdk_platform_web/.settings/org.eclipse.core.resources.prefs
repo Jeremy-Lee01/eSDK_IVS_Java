@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//WebContent/conf/platform_common_ext_conf.properties=UTF-8
+encoding//WebContent/conf/platform_common_in_conf.properties=UTF-8
+encoding//conf4build/sms/conf/platform_common_in_conf.properties=UTF-8

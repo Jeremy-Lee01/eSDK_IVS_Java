@@ -1,0 +1,85 @@
+/**
+ * Copyright 2015 Huawei Technologies Co., Ltd. All rights reserved.
+ * eSDK is licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *   
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *   
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.huawei.esdk.ivs.southcommu.jna.bean.devicemgr;
+
+import java.util.ArrayList;
+import com.huawei.esdk.ivs.domain.model.CommonConstant;
+import java.util.List;
+
+import com.sun.jna.Structure;
+
+/**
+ * 前端OSD时间
+ * <p>
+ * @author  sWX198756
+ * @see  [相关类/方法]
+ * @since  eSDK IVS V100R003C00
+ */
+public class OSDTimeSouth extends Structure
+{
+    public OSDTimeSouth()
+    {
+        super(Structure.ALIGN_NONE);
+    }
+    
+    public static class ByReference extends OSDTimeSouth implements Structure.ByReference
+    {
+    }
+    
+    public static class ByValue extends OSDTimeSouth implements Structure.ByValue
+    {
+    }
+    
+    /**
+     * 是否显示时间：0-不显示，1-显示
+     */
+    public int enableOSDTime;
+    
+    /**
+     * 时间显示格式：
+     * 1: XXXX-XX-XX XX:XX:XX(如2009-09-09 09:09:09), 
+     * 2: XXXX年XX月XX日 XX :XX :XX(2009年09月09日 09 :09 :09；
+     * 3: UTC时间
+     */
+    public int timeFormat;
+    
+    /**
+     * 时间X坐标，以左上角为原点
+     */
+    public float timeX;
+    
+    /**
+     * 时间Y坐标，以左上角为原点
+     */
+    public float timeY;
+    
+    /**
+     * 保留字段
+     */
+    public byte[] reserve = new byte[CommonConstant.IVS_RESERVE_32_LEN];
+    
+    @Override
+    protected List<String> getFieldOrder()
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("enableOSDTime");
+        list.add("timeFormat");
+        list.add("timeX");
+        list.add("timeY");
+        list.add("reserve");
+        return list;
+    }
+    
+}

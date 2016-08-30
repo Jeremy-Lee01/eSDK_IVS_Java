@@ -1,0 +1,10 @@
+
+
+addDependentProject(project, "compile", "esdk_platform_common")
+addDependentProject(project, "compile", "esdk_platform_interface")
+
+dependencies {
+	compile ':log4j:1.2.16'
+	compile ':servlet-api'
+	compile ':cxf:2.6.14'
+}

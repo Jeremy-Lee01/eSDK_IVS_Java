@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:soap="http://cxf.apache.org/bindings/soa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+   	   http://cxf.apache.org/jaxws 
+	   http://cxf.apache.org/schemas/jaxws.xsd 
+	   http://cxf.apache.org/core 
+	   http://cxf.apache.org/schemas/core.xsd 
+	   http://cxf.apache.org/bindings/soap 
+	   http://cxf.apache.org/schemas/configuration/soap.xsd ">
+
+
+	<bean id="abstractLoggingInterceptor" abstract="true">
+		<property name="prettyLogging" value="true" />
+	</bean>
+
+	<bean id="logInbound" class="com.huawei.esdk.ivs.interceptor.IVSLoggingInInterceptor"
+		parent="abstractLoggingInterceptor" />
+
+	<bean id="logOutbound"
+		class="com.huawei.esdk.ivs.interceptor.IVSLoggingOutInterceptor"
+		parent="abstractLoggingInterceptor" />
+
+	<cxf:bus>
+		<cxf:inInterceptors>
+			<ref bean="logInbound" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<ref bean="logOutbound" />
+		</cxf:outInterceptors>
+		<cxf:outFaultInterceptors>
+			<ref bean="logOutbound" />
+		</cxf:outFaultInterceptors>
+		<cxf:inFaultInterceptors>
+			<ref bean="logInbound" />
+		</cxf:inFaultInterceptors>
+	</cxf:bus>
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalUserManager"
+		address="/ivsProfessionalUserManager">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalUserManager" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalDeviceManager"
+		address="/ivsProfessionalDeviceManager">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalDeviceManager" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalAlarmManager"
+		address="/ivsProfessionalAlarmManager">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalAlarmManager" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalClusterManager"
+		address="/ivsProfessionalClusterManager">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalClusterManager" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalRecordManager"
+		address="/ivsProfessionalRecordManager">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalRecordManager" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalCommon"
+		address="/ivsProfessionalCommon">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalCommon" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	<jaxws:server
+		serviceClass="com.huawei.esdk.ivs.northcommu.cxf.professional.gen.IVSProfessionalBusinessManager"
+		address="/ivsProfessionalBusinessManager">
+		<jaxws:serviceBean>
+			<ref bean="ivsProfessionalBusinessManager" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="appAuthorize" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutInterceptor" />
+			<bean class="com.huawei.esdk.ivs.interceptor.IVSOutLogInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	
+	
+</beans>

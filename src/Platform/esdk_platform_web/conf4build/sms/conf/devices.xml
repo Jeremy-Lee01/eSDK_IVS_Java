@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices>    
+    <device default="true">
+        <deviceId>RoyaMASDevice</deviceId>
+        <deviceName>Roya MAS</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>RoyaMAS</deviceType>
+        <deviceVersion>V20</deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+    <device default="false">
+        <deviceId>SMSHttpDevice</deviceId>
+        <deviceName>Short Message HTTP Gateway</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>SMSHTTP</deviceType>
+        <deviceVersion></deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+    <device default="false">
+        <deviceId>SMSCMPPDevice</deviceId>
+        <deviceName>Short Message CMPP Gateway</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>SMSCMPP</deviceType>
+        <deviceVersion></deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+    <device default="false">
+        <deviceId>SMSSGIPDevice</deviceId>
+        <deviceName>Short Message SGIP Gateway</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>SMSSGIP</deviceType>
+        <deviceVersion></deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+    <device default="false">
+        <deviceId>SMSSMGPDevice</deviceId>
+        <deviceName>Short Message SMGP Gateway</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>SMSSMGP</deviceType>
+        <deviceVersion></deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+    <device default="false">
+        <deviceId>SMSSMPPDevice</deviceId>
+        <deviceName>Short Message SMPP Gateway</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>SMSSMPP</deviceType>
+        <deviceVersion></deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+	<device default="false">
+		<deviceId>SMSPLUGINDevice</deviceId>
+		<deviceName>Short Message Plugin Gateway</deviceName>
+		<serviceAccessPoint></serviceAccessPoint>
+		<loginUser></loginUser>
+		<loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+		<deviceType>SMSPLUGIN</deviceType>
+		<deviceVersion></deviceVersion>
+		<connMode>0</connMode>
+		<reserver1></reserver1>
+		<reserver2></reserver2>
+	</device>
+	
+	<!-- 20160519 by 370542 -->
+    <device default="false">
+        <deviceId>SMSEcomDevice</deviceId>
+        <deviceName>Short Message ECOM Gateway</deviceName>
+        <serviceAccessPoint></serviceAccessPoint>
+        <loginUser></loginUser>
+        <loginPwd>glr2BjSuXjX8wJ4g009Tfw==</loginPwd>
+        <deviceType>SMSECOM</deviceType>
+        <deviceVersion></deviceVersion>
+        <connMode>0</connMode>
+        <reserver1></reserver1>
+        <reserver2></reserver2>
+    </device>
+	
+</devices>

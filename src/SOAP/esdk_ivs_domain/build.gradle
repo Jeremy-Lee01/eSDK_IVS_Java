@@ -1,0 +1,10 @@
+
+
+addDependentProject(project, "compile", "esdk_platform_common")
+addDependentProject(project, "compile", "esdk_platform_interface")
+addDependentProject(project, "compile", "esdk_ivs_base")
+addDependentProject(project, "compile", "esdk_ivs_neadp_interface")
+
+dependencies {
+	
+}

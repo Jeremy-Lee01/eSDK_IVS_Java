@@ -1,0 +1,451 @@
+<html>
+<head>
+
+</head>
+<body style="width: 100%;">
+	<div id="getalarmeventinfo_desc">
+		<p style="font-weight: bold;" id="getAlarmEventInfoDesc">此接口用于订阅告警信息</p>
+		<div class="description_input_div">
+			<p style="font-weight: bold;" id="inputParameterDesc">输入参数描述:</p>
+			<table border="1" style="width: 100%; border-collapse: collapse;">
+				<tbody>
+					<tr style="background-color: #E7E7E7;">
+						<td width="25%"><p id="inputParameterTd">参数</p></td>
+						<td width="18%"><p id="inputTypeTd">类型</p></td>
+						<td width="18%"><p id="inputRestrictionTd">约束</p></td>
+						<td><p id="inputDescriptionTd">描述</p></td>
+					</tr>
+					<tr>
+						<td>requestXML</td>
+						<td>String</td>
+						<td>1</td>
+						<td><p id="alarmEventIdInputTd">告警订阅请求XML</p></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="description_output_div">
+			<p style="font-weight: bold;" id="outputParameterDesc">返回参数描述:</p>
+			<table border="1" style="width: 100%;">
+				<tbody>
+					<tr style="background-color: #E7E7E7;">
+						<td width="25%"><p id="outputParameterTd">参数</p></td>
+						<td width="18%"><p id="outputTypeTd">类型</p></td>
+						<td width="18%"><p id="outputRestrictionTd">约束</p></td>
+						<td><p id="outputDescriptionTd">描述</p></td>
+					</tr>
+					<tr>
+						<td>resultCode</td>
+						<td>int</td>
+						<td>1</td>
+						<td><p id="resultCodeTd">成功返回0，失败返回错误码</p></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<p style="font-weight: bold;" id="getAlarmEventInfoDesc">告警订阅请求XML</p>
+		<table border="1" style="width: 100%; border-collapse: collapse;">
+			<thead>
+				<tr>
+					<td width="15%" colspan=6>
+						<p class=TableHeading>
+							<span>属性</span><span lang=EN-US><o:p></o:p></span>
+						</p>
+					</td>
+					<td width="7%">
+						<p class=TableHeading>
+							<span lang=EN-US>M/O<o:p></o:p></span>
+						</p>
+					</td>
+					<td width="76%">
+						<p class=TableHeading>
+							<span>描述</span><span lang=EN-US><o:p></o:p></span>
+						</p>
+					</td>
+				</tr>
+			</thead>
+			<tr style='mso-yfti-irow: 1'>
+				<td width="15%" colspan=6>
+					<p class=TableText>
+						<span lang=EN-US>Content<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>消息体根节点</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 2'>
+				<td width="1%" rowspan=14>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="14%" colspan=5>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>DomainCode</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>消息目标域，例如：</span><span lang=EN-US>6bdacabae9c546e9ab5b8688ccd85a59</span><span>，长度限制</span><span
+							lang=EN-US>32</span><span>字节</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 3'>
+				<td width="14%" colspan=5>
+					<p class=TableText>
+						<span lang=EN-US>Subscribe<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警订阅信息</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 4'>
+				<td width="1%" rowspan=12>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="13%" colspan=4>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscriberInfo</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>订阅者信息：</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>如果是本域用户，表示为该用户订阅告警，目标设备可以为本域能见的所有设备</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>如果是外域，表示向该外域注册。与本域用户订阅有所不同，目标设备为该外域能见设备</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 5'>
+				<td width="1%" rowspan=3>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span lang=EN-US>Subscriber<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>订阅者：</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>1-</span><span>本域用户</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>2-</span><span>外域（域间订阅）</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 6'>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscriberID</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>订阅者</span><span lang=EN-US>ID</span><span>：</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>订阅者是本域用户时为用户</span><span lang=EN-US>ID<o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span>订阅者是外域用户时为外域</span><span lang=EN-US>ID</span><span>，即请求域的域互联编码</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 7'>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>UserDomainCode</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>用户所在域编码</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 8'>
+				<td width="13%" colspan=4>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscribeList</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警订阅列表。没有该节点则表示不订阅任何告警，即取消告警订阅</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 9'>
+				<td width="1%" rowspan=7>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="11%" colspan=3>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscribeInfo</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>单条告警订阅信息</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 10'>
+				<td width="1%" rowspan=6>
+					<p class=TableText>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+				</td>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmInCode</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警源编码，没有该节点或该节点为空值时，表示订阅所有设备的告警信息</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 11'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>SubscribeType</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>订阅方式：</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>1-</span><span>所有</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>2-</span><span>按告警类型</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+					<p class=ItemListinTable style='mso-pagination: none'>
+						<![if !supportLists]>
+						<span lang=EN-US><span style='mso-list: Ignore'><span>&nbsp;
+							</span></span></span>
+						<![endif]>
+						<span lang=EN-US>3-</span><span>按告警级别</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 12'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmLevelValueMin</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警级别下限值。订阅方式为“</span><span lang=EN-US>3-</span><span>按告警级别”必须有该节点，其他类型时可以没有该节点</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 13'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmLevelValueMax</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警级别上限值。订阅方式为“</span><span lang=EN-US>3-</span><span>按告警级别”必须有该节点，其他类型时可以没有该节点</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 14'>
+				<td width="9%" colspan=2>
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmTypeList</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>O<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警类型列表。当订阅方式为“</span><span lang=EN-US>2-</span><span>按告警类型”时，必须有该节点</span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<p class=TableText>
+					<span lang=EN-US><o:p>&nbsp;</o:p></span>
+				</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span class=SpellE><span lang=EN-US>AlarmType</span></span><span
+							lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+				<td width="7%">
+					<p class=TableText>
+						<span lang=EN-US>M<o:p></o:p></span>
+					</p>
+				</td>
+				<td width="76%">
+					<p class=TableText>
+						<span>告警类型。有告警类型列表节点时，至少有一个告警类型节点</span><span lang=EN-US><o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<![if !supportMisalignedColumns]>
+			<tr height=0>
+				<td width=15 style='border: none'></td>
+				<td width=15 style='border: none'></td>
+				<td width=15 style='border: none'></td>
+				<td width=17 style='border: none'></td>
+				<td width=33 style='border: none'></td>
+				<td width=106 style='border: none'></td>
+				<td width=47 style='border: none'></td>
+				<td width=281 style='border: none'></td>
+			</tr>
+			<![endif]>
+		</table>
+
+	</div>
+</body>
+</html>

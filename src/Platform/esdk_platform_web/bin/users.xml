@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<users> 
+  <user> 
+    <userId>esdk_user</userId>  
+    <firstName>Test1</firstName>  
+    <lastName>Name1</lastName>  
+    <password>Huawei@123</password>  
+    <userType></userType>  
+    <status></status>  
+    <remark></remark>  
+    <reserve></reserve>  
+    <ability>CTD,CTC,IM,UserProfile,Client,VoiceService,common,AccountMaintenance,Number</ability> 
+  </user> 
+</users>

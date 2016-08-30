@@ -1,0 +1,62 @@
+ext.zipFileName = 'platform-nemgr'
+
+addDependentProject(project, "compile", "esdk_platform_interface")
+addDependentProject(project, "compile", "esdk_platform_srv")
+
+dependencies {
+	compile ':commons-logging:1.1.1'
+	compile ':commons-digester3:3.2'	
+	compile ':log4j:1.2.16'
+	compile ':dom4j:1.6.1'
+	
+	compile ':spring-web:4.1.6.RELEASE'
+	compile ':spring-context:4.1.6.RELEASE'
+	compile ':spring-context-support:4.1.6.RELEASE'
+	compile ':spring-core:4.1.6.RELEASE'
+	compile ':spring-expression:4.1.6.RELEASE'
+	compile ':spring-beans:4.1.6.RELEASE'
+	compile ':spring-aop:4.1.6.RELEASE'
+	compile ':spring-tx:4.1.6.RELEASE'
+	
+	compile ':quartz:2.2.1'
+	
+	compile ':gson:2.2.2'
+	compile ':httpclient:4.5'
+	compile ':httpcore:4.4.1'
+	compile ':httpmime:4.5'
+
+	compile ':cxf-core:3.0.9'
+	compile ':cxf-rt-databinding-jaxb:3.0.9'
+	compile ':cxf-rt-frontend-jaxws:3.0.9'
+	compile ':cxf-rt-frontend-simple:3.0.9'
+	compile ':cxf-rt-transports-http:3.0.9'
+	compile ':servlet-api:'
+	
+	compile ':org.restlet:'
+	compile ':jasypt:1.9.2:'
+	
+	//For testing codes
+	testCompile ':wstx-asl:3.2.9'
+	testCompile project(':esdk_platform_interface')
+
+	testCompile ':commons-logging:1.1.1'
+	testCompile ':commons-digester3:3.2'
+	testCompile ':log4j:1.2.16'
+	
+	testCompile ':cxf-core:3.0.9'
+	
+	testCompile ':spring-web:4.1.6.RELEASE'
+	testCompile ':spring-context:4.1.6.RELEASE'
+	testCompile ':spring-context-support:4.1.6.RELEASE'
+	testCompile ':spring-core:4.1.6.RELEASE'
+	testCompile ':spring-expression:4.1.6.RELEASE'
+	testCompile ':spring-beans:4.1.6.RELEASE'
+	testCompile ':spring-aop:4.1.6.RELEASE'
+	testCompile ':spring-tx:4.1.6.RELEASE'
+	
+	testCompile ':quartz:2.2.1'
+	testCompile ':gson:2.2.2'
+
+	testCompile ':httpclient:4.5'
+	testCompile ':httpcore:4.4.1'
+}

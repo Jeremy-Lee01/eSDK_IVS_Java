@@ -1,0 +1,1194 @@
+<html>
+
+<head>
+</head>
+
+<body style="width:100%;">
+<p style="font-weight: bold;">此接口用于获取子设备列表，子设备包括摄像机设备、语音设备、告警设备</p>
+
+<div>
+
+
+<p style="font-weight: bold;">输入参数描述</p>
+
+<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="16%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="16%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="15%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="51%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="16%" valign=top >
+  <p ><span >deviceType</span></p>
+  </td>
+  <td width="16%" valign=top >
+  <p ><span >Integer</span></p>
+  </td>
+  <td width="15%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="51%" valign=top >
+  <p ><span >设备类型：</span></p>
+  <p ><span >2-</span><span >摄像机设备</span></p>
+  <p ><span >3-</span><span >语音设备</span></p>
+  <p ><span >4-</span><span >告警设备</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="16%" valign=top >
+  <p ><span >indexRange</span></p>
+  </td>
+  <td width="16%" valign=top >
+  <p ><span ><a href="#eSDKNa_ivs_server_00009"
+  title=" ">IndexRange</a></span></p>
+  </td>
+  <td width="15%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="51%" valign=top >
+  <p ><span >分页信息</span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+<p style="font-weight: bold;">返回参数描述</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="16%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="16%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="15%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="51%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="16%" valign=top >
+  <p ><span >resultCode</span></p>
+  </td>
+  <td width="16%" valign=top >
+  <p ><span >Integer</span></p>
+  </td>
+  <td width="15%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="51%" valign=top >
+  <p ><span >成功返回</span><span >0</span><span
+  >，失败返回错误码</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="16%" valign=top >
+  <p ><span >cameraBriefInfos</span></p>
+  </td>
+  <td width="16%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00018" title=" ">CameraBriefInfos</a></span></p>
+  </td>
+  <td width="15%" valign=top >
+  <p ><span >0..1</span></p>
+  </td>
+  <td width="51%" valign=top >
+  <p ><span >摄像机设备信息列表（根据请求中</span><span
+  >deviceType</span><span >字段确定返回类型）</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="16%" valign=top >
+  <p ><span >audioBriefInfos</span></p>
+  </td>
+  <td width="16%" valign=top >
+  <p ><span ><a href="#eSDKNa_ivs_server_00071"
+  title=" ">AudioBriefInfos</a></span></p>
+  </td>
+  <td width="15%" valign=top >
+  <p ><span >0..1</span></p>
+  </td>
+  <td width="51%" valign=top >
+  <p ><span >语音设备信息列表（根据请求中</span><span
+  >deviceType</span><span >字段确定返回类型）</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="16%" valign=top >
+  <p ><span >alarmBriefInfos</span></p>
+  </td>
+  <td width="16%" valign=top >
+  <p ><span ><a href="#eSDKNa_ivs_server_00074"
+  title=" ">AlarmBriefInfos</a></span></p>
+  </td>
+  <td width="15%" valign=top >
+  <p ><span >0..1</span></p>
+  </td>
+  <td width="51%" valign=top >
+  <p ><span >告警设备信息列表（根据请求中</span><span
+  >deviceType</span><span >字段确定返回类型）</span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+
+<p style="font-weight: bold;">IndexRange</p>
+
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >fromIndex</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >Integer</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >开始索引</span></p>
+  <p ><span >正整数，最小从</span><span
+  >1</span><span >开始</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >toIndex</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >Integer</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >结束索引</span></p>
+  <p ><span >正整数，必须大于开始索引，最大分页长度</span><span
+  >5000</span><span >条记录，即</span><span
+  >0&lt;=</span><span >（结束索引</span><span
+  >-</span><span >开始索引）</span><span >&lt;=
+  5000</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p style="font-weight: bold;">CameraBriefInfos</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >total</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >总记录数</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >indexRange</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00009" title=" ">IndexRange</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >分页信息</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >cameraBriefInfoList</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00019" title=" ">CameraBriefInfoList</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >视频子设备简要信息</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p style="font-weight: bold;">CameraBriefInfoList</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >cameraBriefInfo</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00020" title=" ">CameraBriefInfo</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >0</span><span >…</span><span
+  >n</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >视频子设备信息</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p style="font-weight: bold;">CameraBriefInfo</p>
+
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="71%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >code</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >设备编码</span></p>
+  <p ><span >请参见</span><span ><a
+  href="#eSDK_ivs_server_00177" title=" "><span  style='font-family:
+  宋体'><span >设备编码规则附录</span></span></a></span><span style='font-family:
+  宋体'>，例如：</span><span >32010300100201030101#6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >64</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >name</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >摄像机名称</span></p>
+  <p ><span >键盘可见字符和中文，长度限制</span><span
+  >192</span><span >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceGroupCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >所属设备组编码</span></p>
+  <p ><span >需要使用</span><span ><a
+  href="#eSDK_ivs_server_00132" title=" ">getDeviceGroup</a></span><span
+  >方法获取，长度限制</span><span >128</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >parentCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >父设备编码</span></p>
+  <p ><span >一般为主设备编码，例如：</span><span
+  >32010300100201030000#6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >64</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >domainCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >设备归属域的域编码</span></p>
+  <p ><span >需要使用</span><span ><a
+  href="#eSDK_ivs_server_00131" title=" ">getDomainRoute</a></span><span
+  >方法获取，例如：</span><span >6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >32</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceModelType</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >主设备型号</span></p>
+  <p ><span >由各设备厂家提供，长度限制</span><span
+  >32</span><span >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >vendorType</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >设备提供商类型：（长度限制</span><span
+  >32</span><span >字节）</span></p>
+  <p ><span >HUAWEI</span></p>
+  <p ><span >HIK</span></p>
+  <p ><span >DAHUA</span></p>
+  <p ><span >SUNELL</span></p>
+  <p ><span >CANON</span></p>
+  <p ><span >CHANGHONG</span></p>
+  <p ><span >TIANDY</span></p>
+  <p ><span >PANASONIC</span></p>
+  <p ><span >AXIS</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceFormType</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >主设备类型：</span></p>
+  <p ><span >1-IPC</span></p>
+  <p ><span >2-DVS</span></p>
+  <p ><span >3-DVR</span></p>
+  <p ><span >4-eNVR</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >type</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >摄像机类型：</span></p>
+  <p ><span >0-</span><span >固定枪机</span></p>
+  <p ><span >1-</span><span >有云台枪机</span></p>
+  <p ><span >2-</span><span >球机</span></p>
+  <p ><span >3-</span><span >半球</span><span
+  >-</span><span >固定摄像机</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >cameraLocation</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >摄像机安装位置描述</span></p>
+  <p ><span >键盘可见字符和中文，长度限制</span><span
+  >256</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >cameraStatus</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >摄像机扩展状态：</span></p>
+  <p ><span >1</span><span >–正常</span></p>
+  <p ><span >2</span><span >–视频丢失</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >status</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >设备状态：</span></p>
+  <p ><span >0-</span><span >离线</span></p>
+  <p ><span >1-</span><span >在线</span></p>
+  <p ><span >2-</span><span >休眠</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >netType</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >网络类型：</span></p>
+  <p ><span >0-</span><span >有线</span></p>
+  <p ><span >1-</span><span >无线</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >isSupportIntelligent</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >是否支持智能分析：</span></p>
+  <p ><span >0-</span><span >不支持</span></p>
+  <p ><span >1-</span><span >支持</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >enableVoice</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >是否启用随路音频：</span></p>
+  <p ><span >0-</span><span >停用</span></p>
+  <p ><span >1-</span><span >启用</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >nvrCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >设备所属</span><span >NVR</span><span
+  >编码</span></p>
+  <p ><span >表示该设备被该</span><span
+  >NVR</span><span >管理，例如：</span><span
+  >9145a3f7c4164d3ab9e161fcb4221426</span><span style='font-family:
+  宋体'>，长度限制</span><span >32</span><span >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceCreateTime</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >设备创建时间</span></p>
+  <p ><span >格式为</span><span >yyyyMMddHHmmss</span><span
+  >，如</span><span >20121207102035</span><span
+  >，长度限制</span><span >20</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >isExDomain</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >是否为外域：</span></p>
+  <p ><span >0-</span><span >否</span></p>
+  <p ><span >1-</span><span >是</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceIP</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >前端</span><span >IP</span></p>
+  <p ><span >点分十进制格式，例如：</span><span
+  >10.166.166.126</span><span >，长度限制</span><span
+  >64</span><span >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >reserve</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="71%" valign=top >
+  <p ><span >保留字段</span></p>
+  <p ><span >长度限制</span><span >32</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p style="font-weight: bold;">AudioBriefInfos</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >total</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >总记录数</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >indexRange</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00009" title=" ">IndexRange</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >分页信息</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >reserve</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >保留字段，长度限制</span><span
+  >32</span><span >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >audioBriefInfoList</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00072" title=" ">AudioBriefInfoList</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >语音子设备简要信息列表</span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+
+<p style="font-weight: bold;">AudioBriefInfoList</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >audioBriefInfo</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00073" title=" ">AudioBriefInfo</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >0</span><span >…</span><span
+  >n</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >语音子设备简要信息</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p style="font-weight: bold;">AudioBriefInfoList</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceGroupId</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >设备组</span><span >ID</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >audioCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >语音设备编码</span></p>
+  <p ><span >例如：</span><span >32010300100201030401#6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >64</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >domainCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >所属域编码</span></p>
+  <p ><span >例如：</span><span >6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >32</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >audioName</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >语音设备名称</span></p>
+  <p ><span >汉字和字母（</span><span
+  >a-z</span><span >和</span><span >A-Z</span><span
+  >）、数字、中划线和下划线，长度限制</span><span >128</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >channelType</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >通道类型：</span></p>
+  <p ><span >0-</span><span >语音输入</span></p>
+  <p ><span >1-</span><span >语音输出</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >reserve</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >保留字段</span></p>
+  <p ><span >长度限制</span><span >32</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+
+<p style="font-weight: bold;">AlarmBriefInfos</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >total</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >总记录数</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >indexRange</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00009" title=" ">IndexRange</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >分页信息</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >reserve</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >保留字段</span></p>
+  <p ><span >长度限制</span><span >32</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >alarmInfoList</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00075" title=" ">AlarmBriefInfoList</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >告警子设备简要信息列表</span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+
+<p style="font-weight: bold;">AlarmBriefInfoList</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >alarmBriefInfo</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span ><a href="#eSDK_ivs_server_00076" title=" ">AlarmBriefInfo</a></span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >0</span><span >…</span><span
+  >n</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >告警子设备简要信息</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p style="font-weight: bold;">AlarmBriefInfo</p>
+	<table border="1"  style="width:100%;">
+ <thead style='background-color: #E7E7E7;'>
+  <tr>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>参数</span></p>
+   </td>
+   <td width="11%" valign=top >
+   <p ><span style='font-family:黑体'>类型</span></p>
+   </td>
+   <td width="6%" valign=top >
+   <p ><span style='font-family:黑体'>约束</span></p>
+   </td>
+   <td width="72%" valign=top >
+   <p ><span style='font-family:黑体'>描述</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >deviceGroupCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >所属设备组编码</span></p>
+  <p ><span >例如：根设备编码为</span><span
+  >0</span><span >，其他设备组从</span><span
+  >1</span><span >开始递增，长度限制</span><span
+  >128</span><span >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >alarmCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >告警设备编码</span></p>
+  <p ><span >例如：</span><span >32010300100201030301#6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >64</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >domainCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >所属域编码</span></p>
+  <p ><span >例如：</span><span >6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >32</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >alarmName</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >告警通道名称</span></p>
+  <p ><span >汉字和字母（</span><span
+  >a-z</span><span >和</span><span >A-Z</span><span
+  >）、数字、中划线和下划线，长度限制</span><span >260</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >channelType</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >通道类型：</span></p>
+  <p ><span >0-</span><span >告警输入</span></p>
+  <p ><span >1-</span><span >告警输出</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >parentCode</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >主设备编码</span></p>
+  <p ><span >例如：</span><span >32010300100201030000#6bdacabae9c546e9ab5b8688ccd85a59</span><span
+  >，长度限制</span><span >64</span><span
+  >字节</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >isExDomain</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >int</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >是否为外域设备：</span></p>
+  <p ><span >0-</span><span >否</span></p>
+  <p ><span >1-</span><span >是</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="11%" valign=top >
+  <p ><span >reserve</span></p>
+  </td>
+  <td width="11%" valign=top >
+  <p ><span >string</span></p>
+  </td>
+  <td width="6%" valign=top >
+  <p ><span >1</span></p>
+  </td>
+  <td width="72%" valign=top >
+  <p ><span >保留字段</span></p>
+  <p ><span >长度限制</span><span >32</span><span>字节</span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+</body>
+
+</html>

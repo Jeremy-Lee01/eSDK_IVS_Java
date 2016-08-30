@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_92"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/commons-beanutils-1.9.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/log4j-1.2.16.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/jaxb-impl-2.2.11.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/jaxb-core-2.2.11.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/selfdev/wcc/wcc_crypt-1.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/selfdev/wcc/wcc_common-1.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="D:/Tools/eclipseMars_J2EE/plugins/org.apache.axis_1.4.0.v201411182030/lib/axis.jar"/>
+	<classpathentry kind="lib" path="D:/Tools/eclipseMars_J2EE/plugins/org.apache.commons.discovery_0.2.0.v201004190315/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="D:/Tools/eclipseMars_J2EE/plugins/javax.xml.rpc_1.1.0.v201209140446/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="D:/Tools/eclipseMars_J2EE/plugins/javax.xml.soap_1.2.0.v201005080501/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="D:/Tools/eclipseMars_J2EE/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="D:/Tools/eclipseMars_J2EE/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

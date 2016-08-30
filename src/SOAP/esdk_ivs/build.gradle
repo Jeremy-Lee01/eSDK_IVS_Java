@@ -1,0 +1,14 @@
+
+ext.zipFileName = 'esdksvr_ivs_nemgr_api_prof'
+
+ext.zipProjectDirs = ['esdk_ivs_base', "esdk_ivs_domain", "esdk_ivs","esdk_ivs_neadp_interface"]
+
+addDependentProject(project, "compile", "esdk_platform_common")
+addDependentProject(project, "compile", "esdk_platform_interface")
+addDependentProject(project, "compile", "esdk_ivs_base")
+addDependentProject(project, "compile", "esdk_ivs_domain")
+
+dependencies {
+	compile ':log4j:1.2.16'
+	compile ':cxf:2.6.14'
+}

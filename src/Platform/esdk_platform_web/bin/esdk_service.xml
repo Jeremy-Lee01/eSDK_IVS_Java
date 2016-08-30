@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:simple="http://cxf.apache.org/simple"
+	xmlns:soap="http://cxf.apache.org/bindings/soa"
+	xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+   	   http://cxf.apache.org/jaxws 
+	   http://cxf.apache.org/schemas/jaxws.xsd 
+	   http://cxf.apache.org/bindings/soap 
+	   http://cxf.apache.org/schemas/configuration/soap.xsd
+		http://cxf.apache.org/simple 
+		http://cxf.apache.org/schemas/simple.xsd
+		http://cxf.apache.org/transports/http/configuration 
+		http://cxf.apache.org/schemas/configuration/http-conf.xsd ">
+	<!--导入与CXF框架有关的xml,这个是只要导入cxf.jar就可自动导入-->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<!--<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />-->
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	<import resource="classpath*:META-INF/web-services/*.xml"/>
+</beans>

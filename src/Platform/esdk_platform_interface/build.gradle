@@ -1,0 +1,9 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+ext.zipFileName = 'platform-nemgrapi'
+
+// manifest Info
+ext.packageTitle = "eSDK Platform NE Manager Interface"
+
+addDependentProject(project, "compile", "esdk_platform_common")

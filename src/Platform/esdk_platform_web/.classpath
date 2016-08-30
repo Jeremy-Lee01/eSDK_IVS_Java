@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="WebContent/conf"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry exported="true" kind="src" path="/esdk_platform_common"/>
+	<classpathentry exported="true" kind="src" path="/esdk_platform_interface"/>
+	<classpathentry exported="true" kind="src" path="/esdk_platform_impl"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/platform/OpenAS/ONIP SOABean OpenAS V300R002C60/OpenAS_Tomcat7/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/javax.ws.rs.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/org.restlet.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/org.restlet.ext.servlet.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/org.restlet.ext.jaxrs.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/org.restlet.ext.crypto.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/commons-digester3-3.2.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-4.1.6/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/httpclient-4.5/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/httpclient-4.5/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/httpclient-4.5/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-transports-http-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-wsdl-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-core-3.0.9.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

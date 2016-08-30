@@ -1,0 +1,10 @@
+ext.proGuardConfigFile = "ProguardCfg_Native.cfg"
+ext.repackingPackage = "com.huawei.esdk.ivs.professional.local.impl"
+
+
+dependencies {
+	compile ':cxf:2.6.14'
+	compile ':log4j:1.2.16'
+	
+	testCompile ':junit:4.11'
+}

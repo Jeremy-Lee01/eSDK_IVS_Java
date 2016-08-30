@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/neethi-3.0.3.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/stax2-api-3.1.4.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/woodstox-core-asl-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/wsdl4j-1.6.3.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/xmlschema-core-2.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-core-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-bindings-soap-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-databinding-jaxb-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-frontend-jaxws-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-frontend-simple-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-transports-http-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-wsdl-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-xjc-runtime-3.0.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-manifest.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/cxf-3.0.9/cxf-rt-transports-http-jetty-3.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/IVS_CallBack/lib/geronimo-servlet_3.0_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/IVS_CallBack/lib/jetty-continuation-8.1.19.v20160209.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/IVS_CallBack/lib/jetty-http-8.1.19.v20160209.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/IVS_CallBack/lib/jetty-io-8.1.19.v20160209.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/IVS_CallBack/lib/jetty-server-8.1.19.v20160209.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/IVS_CallBack/lib/jetty-util-8.1.19.v20160209.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- <import resource="/META-INF/spring/nemgr-beans.xml"/> -->
+	<bean id="deviceFactory" class="com.huawei.esdk.platform.nemgr.DeviceFactory" />
+
+	<bean id="abnormaleventManager"
+		class="com.huawei.esdk.platform.abnormalevent.AbnormaleventManager" destroy-method="destroy">
+	</bean>
+
+	<bean id="debuggingManager" class="com.huawei.esdk.platform.debugging.DebuggingManager" destroy-method="destroy">
+	</bean>
+
+	<bean class="com.huawei.esdk.platform.remote.RemoteManager"
+		init-method="bindRemote">
+		<property name="debuggingManager" ref="debuggingManager"></property>
+		<property name="abnormaleventRemote" ref="abnormaleventManager"></property>
+	</bean>
+
+	<bean id="connManager" class="com.huawei.esdk.platform.nemgr.DeviceConnManager">
+		<property name="deviceFactory" ref="deviceFactory" />
+		<property name="reconnector" ref="deviceReconnector" />
+		<property name="scheduler" ref="scheduler" />
+		<property name="deviceManager" ref="deviceManager" />
+	</bean>
+	
+	<bean id="deviceManager" class="com.huawei.esdk.platform.nemgr.DeviceManager"
+		init-method="init" lazy-init="true">
+		<property name="connMgr" ref="connManager" />
+		<property name="deviceFactory" ref="deviceFactory" />
+		<property name="reconnector" ref="deviceReconnector" />
+		<property name="abnormaleventManager" ref="abnormaleventManager" />
+		<property name="collector" ref="notifyCollector" />
+		<property name="deviceConfigService" ref="deviceConfigService"></property>
+		<property name="scheduler" ref="scheduler" />
+	</bean>
+
+	<bean id="logManager" class="com.huawei.esdk.platform.log.LogManager">
+	</bean>
+
+	<bean id="deviceReconnector" class="com.huawei.esdk.platform.nemgr.conn.DeviceReconnector">
+		<property name="connMgr" ref="connManager" />
+		<property name="deviceFactory" ref="deviceFactory" />
+	</bean>
+
+	<bean id="jobtask"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- called object when trigged -->
+		<property name="targetObject">
+			<ref bean="deviceReconnector" />
+		</property>
+		<!-- called method when trigged -->
+		<property name="targetMethod">
+			<value>run</value>
+		</property>
+		<property name="group">
+			<value>eSDK_Jobs</value>
+		</property>
+		<property name="name">
+			<value>DeviceReconnectorJob</value>
+		</property>
+	</bean>
+	
+	<!-- define trigger time -->
+	<bean id="doReconn" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="jobtask" />
+		</property>
+		<!-- cron expression -->
+		<property name="cronExpression">
+			<value>0/15 * * * * ?</value>
+		</property>
+	</bean>
+
+	<bean id="scheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="false">
+		<property name="triggers">
+			<list>
+				<ref bean="doReconn"/>
+			</list>
+		</property>
+		<property name="quartzProperties">
+		    <map>
+		        <entry key="org.quartz.threadPool.threadCount" value="5"/>
+		    </map>
+		</property>
+	</bean>
+
+	<bean id="userManager" class="com.huawei.esdk.platform.usermgr.UserManager"
+		init-method="init">
+		<property name="userConfigService" ref="userConfigService"></property>
+		<property name="scheduler" ref="scheduler" />
+	</bean>
+
+	<bean id="userLockManager" class="com.huawei.esdk.platform.usermgr.UserLockManager"
+		init-method="init">
+	</bean>
+
+	<bean id="appAuthorize" class="com.huawei.esdk.platform.interceptor.AppAuthorize">
+	</bean>
+	
+	<bean id="restAppAuthorize" class="com.huawei.esdk.platform.authorize.RestAppAuthorize">
+	</bean>
+	
+	<bean id="authorizeAdapterRegister" class="com.huawei.esdk.platform.authorize.AuthorizeAdapterRegister">
+		<property name="appAuthorize" ref="appAuthorize"></property>
+		<property name="restAppAuthorize" ref="restAppAuthorize"></property>
+	</bean>
+
+	<bean id="protocolAdapterManager" class="com.huawei.esdk.platform.commu.ProtocolAdapterManager">
+	</bean>
+
+	<bean id="notifyCollector" class="com.huawei.esdk.platform.nemgr.base.NotifyCollector">
+	</bean>
+
+	<bean id="sessionListenerManager"
+		class="com.huawei.esdk.platform.listener.SessionListenerManager">
+	</bean>
+
+	<!-- eSDK 北向流控 add in SPC200 -->
+	<bean id="northFlowController" class="com.huawei.esdk.platform.flowcontrol.Controller"
+		init-method="startMonitor">
+		<property name="performer" ref="northFCPerformer" />
+		<property name="monitor" ref="northFCMonitor" />
+		<property name="policies" ref="northFCPolicies" />
+	</bean>
+
+	<bean id="northFCPolicies" class="com.huawei.esdk.platform.flowcontrol.Policies">
+	</bean>
+
+	<bean id="northFCMonitor" class="com.huawei.esdk.platform.flowcontrol.Monitor">
+	</bean>
+
+	<bean id="northFCPerformer" class="com.huawei.esdk.platform.flowcontrol.Performer">
+	</bean>
+
+	<!-- eSDK 南向流控 -->
+	<bean id="southFlowController" class="com.huawei.esdk.platform.flowcontrol.Controller"
+		init-method="startMonitor">
+		<property name="performer" ref="southFCPerformer" />
+		<property name="monitor" ref="southFCMonitor" />
+		<property name="policies" ref="southFCPolicies" />
+	</bean>
+
+	<bean id="southFCPolicies" class="com.huawei.esdk.platform.flowcontrol.Policies">
+	</bean>
+
+	<bean id="southFCMonitor" class="com.huawei.esdk.platform.flowcontrol.Monitor">
+	</bean>
+
+	<bean id="southFCPerformer" class="com.huawei.esdk.platform.flowcontrol.Performer">
+	</bean>
+
+	<bean id="authorize" class="com.huawei.esdk.platform.authorize.Authorize"></bean>
+	
+	<bean id="interfaceLogger" class="com.huawei.esdk.platform.log.InterfaceLog">
+	</bean>
+	
+	<bean id="logFileUploader" class="com.huawei.esdk.platform.log.LogFileUploader"
+		init-method="init" destroy-method="destroy">
+	</bean>
+
+	<!-- 日志清理定时任务 -->
+	
+	<!-- 要调用的工作类 -->
+	<bean id="deleteLog" class="com.huawei.esdk.platform.log.LogFileDeleteTask"></bean>
+	
+	<!-- 定义调用对象和调用对象的方法 -->
+	<bean id="deleteLogTask"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类 -->
+		<property name="targetObject">
+			<ref bean="deleteLog" />
+		</property>
+		<!-- 调用类中的方法 -->
+		<property name="targetMethod">
+			<value>work</value>
+		</property>
+	</bean>
+	
+	<!-- 定义触发时间 -->
+	<bean id="deleteLogTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="deleteLogTask" />
+		</property>
+		<!-- cron表达式 -->
+		<property name="cronExpression">
+			<value>0 0 1 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
+	<bean id="deleteLogQuertz" lazy-init="false"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="deleteLogTrigger" />
+			</list>
+		</property>
+	</bean>
+	
+</beans>

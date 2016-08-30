@@ -1,0 +1,71 @@
+.header {
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.header1 {
+	float: left;
+	width: 92%;
+	text-align: center;
+}
+.footer {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin: 30px 0;
+}
+
+.footer input{
+width: 200px;
+ height: 30px;
+}
+
+.footer textarea{
+  display: block;
+  margin: auto;
+  width: 40%;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.content {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.item {
+	text-align: center;
+	padding: 20px;
+	float: left;
+	width: 40%;
+}
+
+.item label {
+	width: 40%;
+	display: inline-block;
+}
+
+.item input {
+	width: 40%;
+	display: inline-block;
+}
+.item1 {
+	text-align: center;
+	padding: 20px;
+	float: left;
+	width: 54%;
+}
+.item1 label {
+	width: 25%;
+	display: inline-block;
+}
+.item2 {
+	text-align: center;
+	padding: 20px;
+	float: left;
+	width: 80%;
+}
+.item2 label {
+	width: 30%;
+	display: inline-block;
+}

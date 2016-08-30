@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/demo.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/demo.js"></script>
+<title>eSDK IVS Try Demo</title>
+</head>
+<body>
+	<div class="header" style="margin-top:10%;">
+		<h3>GetDeviceList</h3>
+	</div>
+	<div class="content">
+		<div class="item">
+			<label>deviceType:</label><input id="deviceType" type="text" value=""  placeholder="设备类型:取值2,3,4。">
+		</div>
+		<div class="item">
+			<label>fromIndex:</label><input id="fromIndex" type="text" value="" placeholder="开始索引：取值1`1000">
+		</div>
+		<div class="item">
+			<label>toIndex:</label><input id="toIndex" type="text" value="" placeholder="结束索引：取值1`1000">
+		</div>
+	</div>
+
+	<div class="footer">
+		<input type="button" value="getDeviceList" onclick="getDeviceList()">
+		<textarea id="getDeviceListTextarea" rows="" cols="">结果显示区</textarea>
+	</div>
+
+</body>
+</html>

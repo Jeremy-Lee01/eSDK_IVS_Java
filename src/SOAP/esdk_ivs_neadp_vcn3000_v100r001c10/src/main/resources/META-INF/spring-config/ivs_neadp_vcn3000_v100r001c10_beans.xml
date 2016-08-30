@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/aop   
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName">
+
+	<bean id="clusterMgrCabilityConvert"
+		class="com.huawei.esdk.ivs.device.v100r001c10.clustermanager.convert.ClusterMgrCabilityConvert"></bean>
+
+	<bean id="commonCapabilityConvert"
+		class="com.huawei.esdk.ivs.device.v100r001c10.common.convert.CommonCapabilityConvert"></bean>
+
+	<bean id="deviceMgrCabilityConvert"
+		class="com.huawei.esdk.ivs.device.v100r001c10.devicemanager.convert.DeviceMgrCabilityConvert"></bean>
+
+	<bean id="recordMgrCabilityConvert"
+		class="com.huawei.esdk.ivs.device.v100r001c10.recordmanager.convert.RecordMgrCabilityConvert"></bean>
+
+	<bean id="commonCapability"
+		class="com.huawei.esdk.ivs.device.v100r001c10.common.CommonCapabilityImpl"
+		init-method="init" destroy-method="cleanup" lazy-init="false" scope="singleton"></bean>
+	<bean id="callbackEventImpl"
+		class="com.huawei.esdk.ivs.device.v100r001c10.callback.CallbackEventImpl">
+		<property name="callbackEventConvert" ref="callbackEventConvert"></property>
+	</bean>
+
+	<bean id="callbackEventConvert"
+		class="com.huawei.esdk.ivs.device.v100r001c10.callback.convert.CallbackEventConvert">
+	</bean>
+</beans>

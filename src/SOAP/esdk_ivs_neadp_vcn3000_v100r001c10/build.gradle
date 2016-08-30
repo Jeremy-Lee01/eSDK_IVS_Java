@@ -1,0 +1,13 @@
+
+ext.zipFileName = 'esdksvr_ivs_neadp_vcn3000r001c10'
+
+addDependentProject(project, "compile", "esdk_platform_common")
+addDependentProject(project, "compile", "esdk_platform_interface")
+addDependentProject(project, "compile", "esdk_ivs_base")
+addDependentProject(project, "compile", "esdk_ivs_domain")
+addDependentProject(project, "compile", "esdk_ivs_neadp_interface")
+
+dependencies {
+	compile ':log4j:1.2.16'
+	compile ':jna:4.0.0'
+}

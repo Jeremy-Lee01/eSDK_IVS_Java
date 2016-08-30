@@ -1,0 +1,9 @@
+
+
+addDependentProject(project, "compile", "esdk_platform_common")
+addDependentProject(project, "compile", "esdk_platform_interface")
+addDependentProject(project, "compile", "esdk_ivs_base")
+
+dependencies {
+	compile ':esdk_ivs_domain'
+}

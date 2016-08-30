@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices>
+  <device>
+    <deviceId>VCN8.104</deviceId>
+    <deviceName>VCN8.104</deviceName>
+    <serviceAccessPoint>172.22.8.104:9900</serviceAccessPoint>
+    <loginUser>likun12345</loginUser>
+    <loginPwd>Huawei@123</loginPwd>
+    <deviceType>IVSDevType1</deviceType>
+    <deviceVersion>V100R003C10</deviceVersion>
+    <connMode>1</connMode>
+    <reserver1></reserver1>
+    <reserver2></reserver2>
+  </device>
+  <device>
+    <deviceId>VCN8.103</deviceId>
+    <deviceName>VCN8.103</deviceName>
+    <serviceAccessPoint>172.22.8.103:9900</serviceAccessPoint>
+    <loginUser>admin</loginUser>
+    <loginPwd>Huawei@123</loginPwd>
+    <deviceType>IVSDevType1</deviceType>
+    <deviceVersion>V100R003C10</deviceVersion>
+    <connMode>1</connMode>
+    <reserver1></reserver1>
+    <reserver2></reserver2>
+  </device>
+</devices>

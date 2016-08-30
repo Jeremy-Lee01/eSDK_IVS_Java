@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+//ext.zipFileName = 'platform-baseframe'
+
+dependencies {
+	compile ':spring-core:4.1.6.RELEASE'
+	compile ':spring-beans:4.1.6.RELEASE'
+	compile ':spring-context:4.1.6.RELEASE'
+	compile ':jaxb-core:2.2.11'
+	compile ':jaxb-impl:2.2.11'
+	
+	compile ':commons-beanutils:1.9.1'
+	compile ':commons-io:2.4'
+	
+	compile ':log4j:1.2.16'
+	
+	compile ':commons-codec:1.9'
+	compile ':wcc_common:1.2.1'
+	compile ':wcc_crypt:1.0.0'
+}

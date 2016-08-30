@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:cxf="http://cxf.apache.org/core" xmlns:soap="http://cxf.apache.org/bindings/soa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+   	   http://cxf.apache.org/jaxws 
+	   http://cxf.apache.org/schemas/jaxws.xsd 
+	   http://cxf.apache.org/core 
+	   http://cxf.apache.org/schemas/core.xsd 
+	   http://cxf.apache.org/bindings/soap 
+	   http://cxf.apache.org/schemas/configuration/soap.xsd ">
+
+
+	<jaxws:server
+		serviceClass="com.huawei.esdk.platform.northcommu.cxf.professional.gen.PlatformKeyMgr"
+		address="/platformKeyMgr">
+		<jaxws:serviceBean>
+			<ref bean="platformKeyMgr" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<bean class="com.huawei.esdk.platform.interceptor.PlatformInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="com.huawei.esdk.platform.interceptor.PlatformOutInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+</beans>

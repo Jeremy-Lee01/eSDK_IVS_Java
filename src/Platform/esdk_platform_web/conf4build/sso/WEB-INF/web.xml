@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<display-name>Huawei eSDK Server</display-name>
+
+	<!-- Spring Configuration file -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:spring_config.xml
+		</param-value>
+	</context-param>
+
+	<!-- 编码过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<!-- 编码方式 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<!-- 强制进行编码转换 -->
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>	
+	
+	<!-- To compatible with V1R2 -->
+	<servlet>
+		<servlet-name>SSOAuth</servlet-name>
+		<servlet-class>com.huawei.esdk.sso.servlet.SSOXMLServlet</servlet-class>
+	</servlet>
+	<!-- V1R3 -->
+	<servlet>
+		<servlet-name>SSORestProdServlet</servlet-name>
+		<servlet-class>com.huawei.esdk.sso.servlet.SSORestProdServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SSOAnthenticate</servlet-name>
+		<servlet-class>com.huawei.esdk.sso.servlet.SSORestServlet</servlet-class>
+	</servlet>
+	
+	<!-- Register Restlet framework -->
+	<servlet>
+		<servlet-name>eSDKServerComponent</servlet-name>
+		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+		<init-param>
+			<param-name>org.restlet.application</param-name>
+			<param-value>com.huawei.esdk.platform.restlet.ESDKRestletServerApplication</param-value>
+		</init-param>
+	</servlet>
+	
+	<!--To compatible with V1R2 -->
+	<servlet-mapping>
+		<servlet-name>SSOAuth</servlet-name>
+		<url-pattern>/ssoAuth</url-pattern>
+	</servlet-mapping>
+	<!-- V1R3 -->
+	<servlet-mapping>
+		<servlet-name>SSOAnthenticate</servlet-name>
+		<url-pattern>/entrustedAuthProxy.action</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SSORestProdServlet</servlet-name>
+		<url-pattern>/authenticate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>eSDKServerComponent</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+
+	<!-- Welcome Page -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
