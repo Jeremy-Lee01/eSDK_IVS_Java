@@ -1,0 +1,284 @@
+<div>
+	<label style="font-weight: bold;">DeviceServlet.class:</label>
+	<br><br>
+	<label style="font-weight: bold;"><img src="pic/description.jpg"></label>
+	<br><br>
+	<label style="font-weight: bold;">红色加粗部分代码为接口调用,其他颜色为模拟IDE开发工具中的色彩，便于阅读。</label>
+	<br><br>
+	<span style='color:#7F0055;font-weight:bold;'>package</span><span style='color:black;'> com.huawei.esdk.demo.servlet;</span>
+	<br><br>
+    <span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> java.io.IOException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> java.io.PrintWriter;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.ServletException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServlet;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServletRequest;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServletResponse;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> org.apache.log4j.Logger;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.google.gson.Gson;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.factory.ServiceFactory;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.util.PropertiesUtils;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.GetDeviceList;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.GetDeviceListResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.IVSProfessionalCommon;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.IVSProfessionalDeviceManager;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.IndexRange;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.Login;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.LoginResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.Logout;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.gen.LogoutResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.utils.ClientProvider;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.keygen.GetPublicKey;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.keygen.GetPublicKeyResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.keygen.PlatformKeyMgr;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.keygen.SetSecretKey;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.keygen.SetSecretKeyResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.utils.AES128Utils;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.utils.Base64Utils;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.utils.ClientProvider;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.utils.PropertiesUtils;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.utils.RSA2048Utils;</span>
+	<br><br>
+	<span style='color:#3F5FBF;'>
+	 * 设备模块处理类<br> 
+	 * 获取子设备列表接口<br> 
+	 * <br> 
+	 * @author　xxxxxx<br> 
+	 * @see　[无]<br> 
+	 * @since　[eSDK IVS V100R003C00]<br> 
+	 */</span><br> 
+	<span style='color:#7F0055;font-weight:bold;'>public class</span> DeviceServlet <span style='color:#7F0055;font-weight:bold;'>extends</span> HttpServlet<br> 
+	{<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 序列号<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final long</span> <span style="color:#0000C0;font-style:italic;">serialVersionUID</span> = -1586272300179601609L;<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * log日志对象<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final</span> Logger <span style="color:#0000C0;font-style:italic;">LOGGER</span> = Logger.getLogger(DeviceServlet.<span style='color:#7F0055;font-weight:bold;'>class</span>);<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 登录用户<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> String <span style="color:#0000C0;font-style:italic;">userName</span>;<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 登录密码，明文<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> String <span style="color:#0000C0;font-style:italic;">password</span>;<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * gson，用于String和json之间的转换<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private</span> Gson <span style="color:#0000C0;">gson</span> = <span style='color:#7F0055;font-weight:bold;'>new</span> Gson();<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 设备管理soap客户端<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private</span> IVSProfessionalDeviceManager <span style="color:#0000C0;">ivsProfessionalDeviceManager</span> = <br>
+	    <div style="padding-left: 55px;"> (IVSProfessionalDeviceManager)ClientProvider.getClient(IVSProfessionalDeviceManager.<span style='color:#7F0055;font-weight:bold;'>class</span>);</div><br> 
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 登录访问soap客户端<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private</span> IVSProfessionalCommon <span style="color:#0000C0;">ivsProfessionalCommon</span> = <br>
+	    <div style="padding-left: 55px;"> (IVSProfessionalCommon)ClientProvider.getClient(IVSProfessionalCommon.<span style='color:#7F0055;font-weight:bold;'>class</span>);</div><br> 
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 密钥协商<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private</span> PlatformKeyMgr <span style="color:#0000C0;">platformKeyMgr</span> = <br>
+	    <div style="padding-left: 55px;"> (PlatformKeyMgr)ClientProvider.getClient(PlatformKeyMgr.<span style='color:#7F0055;font-weight:bold;'>class</span>);</div><br> 
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 从esdk_ivs_config.properties中读取用户名和密码<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>static</span><br> 
+	　　{<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">userName</span> = PropertiesUtils.getValue(<span style="color:#0000C0;">"userName"</span>);<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">password</span> = PropertiesUtils.getValue(<span style="color:#0000C0;">"password"</span>);<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style="color:#646464;">@Override</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>protected void</span> doPost(HttpServletRequest request, HttpServletResponse response)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException, IOException<br> 
+	　　{<br> 
+	　　　　doGet(request, response);<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style="color:#646464;">@Override</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>protected void</span> doGet(HttpServletRequest request, HttpServletResponse response)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException, IOException<br> 
+	　　{<br> 
+	　　　　<span style='color:#3F7F5F;'>// 获取需要调用的方法名</span><br> 
+	　　　　String methodName = request.getParameter(<span style="color:#0000C0;">"method"</span>);<br> 
+	　　　　String resp = <span style="color:#0000C0;">""</span>;<br> 
+	　　　　<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>if</span> (<span style="color:#0000C0;">"getDeviceList"</span>.equals(methodName))<br> 
+	　　　　{<br> 
+	　　　　　　<span style='color:#3F7F5F;'>// 获取子设备列表</span><br> 
+	　　　　　　resp = getDeviceList(request);<br> 
+	　　　　}<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 输出流</span><br> 
+	　　　　PrintWriter pw = response.getWriter();<br> 
+	　　　　pw.print(resp);<br> 
+	　　　　pw.close();<br> 
+	　　}<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/** <br> 
+	　　 * 获取子设备列表(SOAP方式调用)<br> 
+	　　 * <br> 
+	　　 * @param request HttpServletRequest对象<br> 
+	　　 * @return json格式的字符串<br> 
+	　　 * @see [无]<br> 
+	　　 * @since　[eSDK IVS V100R003C00]<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public</span> String getDeviceList(HttpServletRequest request)<br> 
+	　　{<br> 
+	　　　　<span style='color:#3F7F5F;'>// 定义返回结果</span><br> 
+	　　　　String response = <span style='color:#7F0055;font-weight:bold;'>null</span>;<br> 
+	　　　　<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>try</span><br> 
+	　　　　{<br>
+			<div style="padding-left: 15px;">
+			
+	　　　　		<span style='color:#7F0055;font-weight:bold;'>int</span> resultCode = 0;<br> 
+	
+	　　　　		<span style='color:#3F7F5F;'>// 获取公钥。后面使用公钥来加密工作密钥和初始向量</span><br> 
+	　　　　		GetPublicKey publicKeyParam = <span style='color:#7F0055;font-weight:bold;'>new</span> GetPublicKey();<br> 
+	　　　　		publicKeyParam.setSecretType("<span style="color:#0000C0;font-style:italic;">RSA2048</span>");<br> 
+	　　　　		GetPublicKeyResponse publicKeyResponse = <span style="color:#0000C0;">platformKeyMgr</span>.<font color="red" style="font-weight: bold;">getPublicKey</font>(publicKeyParam);<br>
+	　　　　		resultCode = publicKeyResponse.getResultCode();<br>  
+	　　　　		<span style='color:#7F0055;font-weight:bold;'>if</span> (0 != resultCode)<br> 
+	　　　　		{<br> 
+		　　　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Get deviceList failed due to getPublicKey failed, errorCode is : "</span> + loginResult);<br> 
+		　　　　　　response = <span style="color:#0000C0;">gson</span>.toJson(resultCode);<br> 
+		　　　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> response;<br> 
+	　　　　		}<br> 
+	　　　　		RSA2048Utils.setPublicKey(publicKeyResponse.getPublicKey());<br>  
+	　　　　		<span style='color:#3F7F5F;'>// 密钥协商</span><br> 
+	　　　　		<span style='color:#7F0055;font-weight:bold;'>byte</span>[] secretKey = AES128Utils.getBT_KEY();<br> 
+	　　　　		<span style='color:#7F0055;font-weight:bold;'>byte</span>[] iv = AES128Utils.getBT_IV();<br> 
+	　　　　		<span style='color:#3F7F5F;'>// 使用公钥来加密工作密钥和初始向量</span><br> 
+	　　　　		String secretKeyStr = Base64Utils.encode(RSA2048Utils.encode(AES128Utils.byte2Hex(secretKey).getBytes("<span style="color:#0000C0;font-style:italic;">UTF-8</span>")));<br> 
+	　　　　		String ivStr = Base64Utils.encode(RSA2048Utils.encode(AES128Utils.byte2Hex(iv).getBytes("<span style="color:#0000C0;font-style:italic;">UTF-8</span>")));<br> 
+	　　　　		SetSecretKey setSecretKeyParam = <span style='color:#7F0055;font-weight:bold;'>new</span> SetSecretKey();<br> 
+	　　　　		setSecretKeyParam.setSecretType("<span style="color:#0000C0;font-style:italic;">AES128</span>");<br> 
+	　　　　		setSecretKeyParam.setSecretKey(secretKeyStr);<br> 
+	　　　　		setSecretKeyParam.setIv(ivStr);<br> 
+	　　　　		SetSecretKeyResponse setSecretKeyResponse = <span style="color:#0000C0;">platformKeyMgr</span>.<font color="red" style="font-weight: bold;">setSecretKey</font>(setSecretKeyParam);<br>
+	　　　　		resultCode = setSecretKeyResponse.getResultCode();<br>  
+	　　　　		<span style='color:#7F0055;font-weight:bold;'>if</span> (0 != resultCode)<br> 
+	　　　　		{<br> 
+		　　　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Get deviceList failed due to setSecretKey failed, errorCode is : "</span> + loginResult);<br> 
+		　　　　　　response = <span style="color:#0000C0;">gson</span>.toJson(resultCode);<br> 
+		　　　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> response;<br> 
+	　　　　		}<br> 
+	　　　　		<br>  
+	　　　　		<span style='color:#3F7F5F;'>// 拼装登录接口入参</span><br> 
+	　　　　		Login loginParam = <span style='color:#7F0055;font-weight:bold;'>new</span> Login();<br> 
+	　　　　		loginParam.setUserName(<span style="color:#0000C0;font-style:italic;">userName</span>);<br> 
+	　　　　		loginParam.setPassword(AES128Utils.encryptPwd(<span style="color:#0000C0;font-style:italic;">password</span>));<br> 
+	　　　　		LoginResponse loginResponse = <span style='color:#7F0055;font-weight:bold;'>new</span> LoginResponse();<br> 
+	　　　　		<br> 
+	　　　　		<span style='color:#3F7F5F;'>// 调用登录接口</span><br><br> 
+	　　　　		loginResponse = <span style="color:#0000C0;">ivsProfessionalCommon</span>.<font color="red" style="font-weight: bold;">login</font>(loginParam);<br> 
+	　　　　		resultCode = loginResponse.getResultCode();<br>  
+	　　　　		<span style='color:#3F7F5F;'>// 登录失败，返回给页面</span><br> 
+	　　　　		<span style='color:#7F0055;font-weight:bold;'>if</span> (0 != resultCode)<br> 
+	　　　　		{<br> 
+		　　　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Get deviceList failed due to login failed, errorCode is : "</span> + loginResult);<br> 
+		　　　　　　response = <span style="color:#0000C0;">gson</span>.toJson(resultCode);<br> 
+		　　　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> response;<br> 
+	　　　　		}<br> 
+	　　　　		<br> 
+	　　　　		<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Begin to getDeviceList"</span>);<br> 
+		　　　　<br> 
+		　　　　<span style='color:#3F7F5F;'>// 获取页面参数</span><br> 
+		　　　　<span style='color:#7F0055;font-weight:bold;'>int</span> deviceType = Integer.parseInt(request.getParameter(<span style="color:#0000C0;">"deviceType"</span>));<br> 
+		　　　　<span style='color:#7F0055;font-weight:bold;'>int</span> fromIndex = Integer.parseInt(request.getParameter(<span style="color:#0000C0;">"fromIndex"</span>));<br> 
+		　　　　<span style='color:#7F0055;font-weight:bold;'>int</span> toIndex = Integer.parseInt(request.getParameter(<span style="color:#0000C0;">"toIndex"</span>));<br> 
+		　　　　<br> 
+		　　　　<span style='color:#3F7F5F;'>// 拼装分页对象</span><br> 
+		　　　　IndexRange indexRange = <span style='color:#7F0055;font-weight:bold;'>new</span> IndexRange();<br> 
+		　　　　indexRange.setFromIndex(fromIndex);<br> 
+		　　　　indexRange.setToIndex(toIndex);<br> 
+		　　　　<br> 
+		　　　　<span style='color:#3F7F5F;'>// 拼装查询设备列表入参</span><br> 
+		　　　　GetDeviceList parameters = <span style='color:#7F0055;font-weight:bold;'>new</span> GetDeviceList();<br> 
+		　　　　parameters.setDeviceType(deviceType);<br> 
+		　　　　parameters.setIndexRange(indexRange);<br> 
+		　　　　GetDeviceListResponse getDeviceListResponse = <span style='color:#7F0055;font-weight:bold;'>new</span> GetDeviceListResponse();</font><br> 
+		　　　　<br> 
+		　　　　<span style='color:#3F7F5F;'>// 调用获取子设备列表接口，indexRange为封装的分页对象，deviceType为int型，只能传入2、3、4</span><br> 
+		　　　　<font color="red" style="font-weight: bold;">getDeviceListResponse = ivsProfessionalDeviceManager.getDeviceList(parameters);</font><br> 
+		　　　　<br> 
+		　　　　<span style='color:#3F7F5F;'>// 根据接口返回数据生成JSON字符串，以便于页面展示</span><br> 
+		　　　　response = <span style="color:#0000C0;">gson</span>.toJson(getDeviceListResponse);<br> 
+		　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Finish to getDeviceList, response is : "</span> + response);<br> 
+		　　　　<br> 
+		　　　　<span style='color:#3F7F5F;'>// 用户登出</span><br> 
+		　　　　Logout logoutParam = <span style='color:#7F0055;font-weight:bold;'>new</span> Logout();<br> 
+		　　　　LogoutResponse logoutResponse = <span style="color:#0000C0;">ivsProfessionalCommon</span>.<font color="red" style="font-weight: bold;">logout</font>(logoutParam);<br> 
+		　　　　resultCode = logoutResponse.getResultCode();<br> 
+		　　　　<span style='color:#7F0055;font-weight:bold;'>if</span> (0 != resultCode)<br> 
+		　　　　{<br> 
+		　　　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Get deviceList failed due to logout failed, errorCode is : "</span> + resultCode);<br>
+		　　　　　　response = <span style="color:#0000C0;">gson</span>.toJson(resultCode);<br>
+		　　　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> response;<br>
+		　　　　}<br><br> 
+		　　　　<span style='color:#3F7F5F;'>// 登出成功后，根据接口返回数据生成JSON字符串</span><br> 
+		　　　　response = <span style="color:#0000C0;">gson</span>.toJson(getDeviceListResponse);<br> 
+		　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Finish to getDeviceList, response is : "</span> + response);<br> 
+			</div>
+	　　　　}<br>
+	　　　　<span style='color:#7F0055;font-weight:bold;'>catch</span> (SOAPFaultException e)<br>
+	　　　　{<br>
+		　　　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.error(<span style="color:#0000C0;">"Get deviceList failed due to soap fault"</span>);<br><br> 
+		　　　　　　<span style='color:#3F7F5F;'>// SDK内部服务错误</span><br>
+		　　　　　　<span style='color:#7F0055;font-weight:bold;'>return </span><span style="color:#0000C0;">gson</span>.toJson(2130000010);<br>
+	　　　　}<br>
+	　　}<br> 
+	}
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>实况浏览</title>
+	<link rel="stylesheet" href="../css/demo.css" type="text/css" />
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="../js/demo_main.js"></script>
+	<script type="text/javascript" src="../js/demo_login.js"></script>
+	<script type="text/javascript" src="../js/demo_live.js"></script>
+</head> 
+<body onload="init();" style="margin: 0">
+	<div>
+		<object id="ocx" style="width:500px; height:500px; margin: 0 auto;" classid="CLSID:3556A474-8B23-496F-9E5D-38F7B74654F4" codebase="ocx/IVS_OCX.cab#version=2,2,0,16"></object>
+	</div>
+	<div>
+
+		<table id="cemara_ctrl" style="display: inline-block;margin-left: 20px;">
+			<tr>
+				<td><img width="50" height="50" src="../pic/arrow_up_left.png" onmousedown="ptzControlMethod('5');" onmouseup="ptzControlMethod('1')"></td>
+				<td><img width="50" height="50" src="../pic/arrow_up.png" onmousedown="ptzControlMethod('2');" onmouseup="ptzControlMethod('1')"></td>
+				<td><img width="50" height="50" src="../pic/arrow_up_right.png"  onmousedown="ptzControlMethod('8');" onmouseup="ptzControlMethod('1')"></td>
+			</tr>
+			<tr>
+				<td><img width="50" height="50" src="../pic/arrow_left.png"  onmousedown="ptzControlMethod('4');" onmouseup="ptzControlMethod('1')"></td>
+				<td align="center">
+					<img width="30" height="30" src="../pic/32-stop.png"  onclick="stopLivePlay();$(this).next().show();$(this).hide();">
+					<img width="30" height="30" src="../pic/61-play.png"  onclick="getLivePlay();$(this).prev().show();$(this).hide();" style="display:none;">
+				</td>
+				<td><img width="50" height="50" src="../pic/arrow_right.png"  onmousedown="ptzControlMethod('7');" onmouseup="ptzControlMethod('1')"></td>
+			</tr>
+			<tr>
+				<td><img width="50" height="50" src="../pic/arrow_down_left.png"  onmousedown="ptzControlMethod('6');" onmouseup="ptzControlMethod('1')"></td>
+				<td><img width="50" height="50" src="../pic/arrow_down.png" onmousedown="ptzControlMethod('3');" onmouseup="ptzControlMethod('1')"></td>
+				<td><img width="50" height="50" src="../pic/arrow_down_right.png"  onmousedown="ptzControlMethod('9');" onmouseup="ptzControlMethod('1')"></td>
+			</tr>
+		</table>
+		
+	</div>
+	
+	<script type="text/javascript">
+		function window.onbeforeunload(){
+			stopLivePlay();
+			closeSession();
+			//alert("关闭窗口");
+		} 
+	</script>
+	
+</body>
+</html>

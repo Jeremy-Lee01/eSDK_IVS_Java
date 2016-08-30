@@ -1,0 +1,103 @@
+<ul class="block">
+	<li>
+		<div id="subscribeAlarm_desc" class="description_div">
+			<!-- append description -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="subscribeAlarm_execution">
+			<!-- append execution code -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="subscribeAlarm_src" class="sourcecode_div">
+			<!-- append source code -->
+		</div>
+	</li>
+</ul>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/description/subscribealarm_desc.html",
+			async : false,
+			success : function(data) {
+				$("#subscribeAlarm_desc").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/execution/subscribealarm_execution.html",
+			async : false,
+			success : function(data) {
+				$("#subscribeAlarm_execution").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/sourcecode/subscribealarm_src.html",
+			async : false,
+			success : function(data) {
+				$("#subscribeAlarm_src").html(data);
+			}
+		});
+	});
+	
+	function subscribeAlarm()
+	{
+		//清空信息
+		$("#subscribeAlarm_resultCode").val("");
+		$("#subscribeAlarm_status").html("");
+		$("#subscribeAlarmReqErrTip").html("");
+		
+		var subscribeAlarmReq = $("#subscribeAlarmReq").val();
+		
+		// 简单参数校验
+		if (isEmpty(subscribeAlarmReq))
+		{
+			$("#subscribeAlarmReqErrTip").html(controller.language.titles["subscribeAlarmReqNull"]);
+			return false;
+		}
+		
+		$.ajax({
+			url : getServerPath()+"/alarmServlet",
+			type : "post",
+			dataType : "json",
+			data : "subscribeAlarmReq=" + subscribeAlarmReq + "&method=subscribeAlarm",
+			async : false,
+			success : function(data)
+			{
+				$("#subscribeAlarm_resultCode").val(data);
+				
+				if (0 == data)
+				{
+					$("#subscribeAlarm_status").html(controller.language.titles["operationSuccess"]);
+				}
+				else
+				{
+					$("#subscribeAlarm_status").html(controller.language.titles["operationFailed"]);
+				}
+			},
+			error : function(data)
+			{
+				var res = data.responseText;
+				$("#subscribeAlarm_resultCode").val(res);
+				$("#subscribeAlarm_status").html(controller.language.titles["operationFailed"]);
+			},
+			beforeSend : function()
+			{
+				$("#subscribeAlarm_resultCode").val("");
+			}
+		});
+	}
+</script>

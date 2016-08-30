@@ -1,0 +1,240 @@
+<div>
+	<label style="font-weight: bold;">AlarmServlet.class:</label>
+	<br><br>
+	<label style="font-weight: bold;"><img src="pic/description.jpg"></label>
+	<br><br>
+	<label style="font-weight: bold;">红色加粗部分代码为接口调用,其他颜色为模拟IDE开发工具中的色彩，便于阅读。</label>
+	<br><br>
+	<span style='color:#7F0055;font-weight:bold;'>package</span><span style='color:black;'> com.huawei.esdk.demo.servlet;</span>
+	<br><br>
+    <span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> java.io.IOException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> java.io.PrintWriter;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.ServletException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServlet;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServletRequest;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServletResponse;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> org.apache.log4j.Logger;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.google.gson.Gson;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.factory.ServiceFactory;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.demo.util.PropertiesUtils;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.ivs.professional.local.bean.IVSSDKResponse;</span>
+	<br><br>
+	<span style='color:#3F5FBF;'>
+		/**<br>
+		 * 告警模块处理类<br> 
+		 * 查询告警事件信息、告警订阅接口<br> 
+	 	 * <br> 
+	 	 * @author　xxxxxx<br> 
+	 	 * @see　[无]<br> 
+	 	 * @since　[eSDK IVS V100R003C00]<br> 
+	 	 */</span><br> 
+	<span style='color:#7F0055;font-weight:bold;'>public class</span> AlarmServlet <span style='color:#7F0055;font-weight:bold;'>extends</span> HttpServlet<br> 
+	{<br> 
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　  * 序列号<br> 
+	　　  */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final long</span> <span style="color:#0000C0;font-style:italic;">serialVersionUID</span> = 6749720431926648350L;<br> 
+	　　<br> 
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　 * log日志对象<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final</span> Logger <span style="color:#0000C0;font-style:italic;">LOGGER</span> = Logger.getLogger(AlarmServlet.<span style='color:#7F0055;font-weight:bold;'>class</span>);<br> 
+	　　<br> 
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　 * 登录用户<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> String <span style="color:#0000C0;font-style:italic;">userName</span>;<br> 
+	　　<br> 
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　 * 登录密码，明文<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> String <span style="color:#0000C0;font-style:italic;">password</span>;<br> 
+	　　<br> 
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　 * gson，用于String和json之间的转换<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private</span> Gson <span style="color:#0000C0;">gson</span> = <span style='color:#7F0055;font-weight:bold;'>new</span> Gson();</span><br> 
+	　　<br> 
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　 * 从esdk_ivs_config.properties中读取用户名和密码<br> 
+	　　*/</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>static</span><br> 
+	　　{<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">userName</span> = PropertiesUtils.getValue(<span style="color:#0000C0;">"userName"</span>);<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">password</span> = PropertiesUtils.getValue(<span style="color:#0000C0;">"password"</span>);<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style="color:#646464;">@Override</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>protected void</span> doPost(HttpServletRequest request, HttpServletResponse response)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException, IOException<br> 
+	　　{<br> 
+	　　　　doGet(request, response);<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style="color:#646464;">@Override</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>protected void</span> doGet(HttpServletRequest request, HttpServletResponse response)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException, IOException<br> 
+	　　{<br> 
+	　　　　<span style='color:#3F7F5F;'>// 获取需要调用的方法名</span><br> 
+	　　　　String methodName = request.getParameter(<span style="color:#0000C0;">"method"</span>);<br> 
+	　　　　String resp = <span style="color:#0000C0;">""</span>;<br> 
+	　　　　<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>if</span> (<span style="color:#0000C0;">"subscribeAlarm"</span>.equals(methodName))<br> 
+	　　　　{<br> 
+	　　　　　　<span style='color:#3F7F5F;'>// 获取告警事件信息</span><br> 
+	　　　　　　resp = subscribeAlarm(request);<br> 
+	　　　　}<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 输出流</span><br> 
+	　　　　PrintWriter pw = response.getWriter();<br> 
+	　　　　pw.print(resp);<br> 
+	　　　　pw.close();<br> 
+	　　}<br> 
+	　　<br> 
+		<span style='color:#3F5FBF;'>
+	　　/** <br> 
+	　　* 订阅告警<br> 
+	　　* <br> 
+	　　* @param request HttpServletRequest对象<br> 
+	　　* @return json格式的字符串<br> 
+	　　* @see [无]<br> 
+	　　* @since　[eSDK IVS V100R003C00]<br> 
+	　　*/</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public</span> String subscribeAlarm(HttpServletRequest request)<br> 
+	　　{<br> 
+	　　　　<span style='color:#3F7F5F;'>// 定义返回结果</span><br> 
+	　　　　String response = <span style='color:#7F0055;font-weight:bold;'>null</span>;<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 用户登录</span><br> 
+	　　　　Integer loginResult = ServiceFactory.getCommonServiceEx().<font color="red" style="font-weight: bold;">login</font>(<span style="color:#0000C0;font-style:italic;">userName</span>, <span style="color:#0000C0;font-style:italic;">password</span>);<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 登录失败，返回给页面</span><br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>if</span> (0 != loginResult)<br> 
+	　　　　{<br> 
+	　　　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Subscribe alarm failed due to login failed, errorCode is : "</span> + loginResult);<br> 
+	　　　　　　response = <span style="color:#0000C0;">gson</span>.toJson(loginResult);<br> 
+	　　　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> response;<br> 
+	　　　　}<br> 
+	　　　　<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Begin to subscribeAlarm"</span>);<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 获取订阅告警xml消息字符串</span><br> 
+	　　　　String subscribeAlarmReq = request.getParameter(<span style="color:#0000C0;">"subscribeAlarmReq"</span>);<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 调用订阅告警接口，subscribeAlarmReq为String类型，将xmlString透传即可</span><br> 
+	　　　　<font color="red" style="font-weight: bold;">int result = ServiceFactory.getAlarmManagerServiceEx().subscribeAlarm(subscribeAlarmReq);</font><br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 根据接口返回数据生成JSON字符串，以便于页面展示</span><br> 
+	　　　　response = <span style="color:#0000C0;">gson</span>.toJson(result);<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Finish to subscribeAlarm, response is : "</span> + response);<br> 
+	　　　　<br> 
+	　　　　<span style='color:#3F7F5F;'>// 用户登出</span><br> 
+	　　　　ServiceFactory.getCommonServiceEx().<font color="red" style="font-weight: bold;">logout</font>();<br> 
+	　　　　<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> response;<br> 
+	　　}<br>
+	　　<br> 
+	}
+	<br><br>
+	<label style="font-weight: bold;">ServiceFactory.class:</label>
+	<br><br>
+	<span style='color:#7F0055;font-weight:bold;'>package</span><span style='color:black;'> com.huawei.esdk.demo.factory;</span>
+	<br><br>
+    <span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.ServletConfig;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.ServletException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServlet;</span>
+	<br>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.ivs.professional.local.ServiceFactoryEx;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.ivs.professional.local.service.alarmmanager.AlarmManagerServiceEx;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.ivs.professional.local.service.common.CommonServiceEx;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.ivs.professional.local.service.devicemanager.DeviceManagerServiceEx;</span>
+	<br><br>
+	<span style='color:#3F5FBF;'>
+	/**<br>
+	 * 业务工厂管理类<br> 
+	 * <br> 
+	 * @author　xxxxxx<br> 
+	 * @see　[无]<br> 
+	 * @since　[eSDK IVS V100R003C00]<br> 
+	 */</span><br> 
+	<span style='color:#7F0055;font-weight:bold;'>public class</span> ServiceFactory <span style='color:#7F0055;font-weight:bold;'>extends</span> HttpServlet<br> 
+	{<br>
+		<span style='color:#3F5FBF;'> 
+	　　/**<br> 
+	　　 * 注释内容<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final long</span> <span style="color:#0000C0;font-style:italic;">serialVersionUID</span> = 4659959607228940247L;<br>
+		<br>
+		<span style='color:#3F5FBF;'>
+	　　/**<br> 
+	　　 * 告警管理模块服务接口<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> AlarmManagerServiceEx <span style="color:#0000C0;font-style:italic;">alarmManagerServiceEx</span>;<br> 
+	　　<br> 
+		<span style='color:#3F5FBF;'>
+	　　/**<br> 
+	　　 * 设备管理模块服务接口<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> DeviceManagerServiceEx <span style="color:#0000C0;font-style:italic;">deviceManagerServiceEx</span>;<br> 
+	　　<br> 
+		<span style='color:#3F5FBF;'>
+	　　/**<br> 
+	　　 * 公用管理模块服务接口<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static</span> CommonServiceEx <span style="color:#0000C0;font-style:italic;">commonServiceEx</span>;<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'> 
+	　　/** <br> 
+	　　 * 重写init方法 <br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public void</span> init(ServletConfig config)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException<br> 
+	　　{<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>super</span>.init(config);<br><br>
+	　　　　<span style='color:#3F7F5F;'>// 从native包中ServiceFactoryEx类中获取相应的服务</span><br>
+	　　　　<span style="color:#0000C0;font-style:italic;">commonServiceEx</span> = <font color="red">ServiceFactoryEx.getService</font>(CommonServiceEx.<span style='color:#7F0055;font-weight:bold;'>class</span>);<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">alarmManagerServiceEx</span> = <font color="red">ServiceFactoryEx.getService</font>(AlarmManagerServiceEx.<span style='color:#7F0055;font-weight:bold;'>class</span>);<br> 
+	　　　　<span style="color:#0000C0;font-style:italic;">deviceManagerServiceEx</span> = <font color="red">ServiceFactoryEx.getService</font>(DeviceManagerServiceEx.<span style='color:#7F0055;font-weight:bold;'>class</span>);<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public static</span> AlarmManagerServiceEx getAlarmManagerServiceEx()<br> 
+	　　{<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> <span style="color:#0000C0;font-style:italic;">alarmManagerServiceEx</span>;<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public static</span> DeviceManagerServiceEx getDeviceManagerServiceEx()<br> 
+	　　{<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> <span style="color:#0000C0;font-style:italic;">deviceManagerServiceEx</span>;<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public static</span> CommonServiceEx getCommonServiceEx()<br> 
+	　　{<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>return</span> <span style="color:#0000C0;font-style:italic;">commonServiceEx</span>;<br> 
+	　　}<br> 
+	}
+</div>

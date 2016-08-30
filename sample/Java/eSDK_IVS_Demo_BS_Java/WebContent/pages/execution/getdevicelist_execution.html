@@ -1,0 +1,91 @@
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%"><label id="inputParam"></label>
+			</td>
+			<td></td>
+			<td width="32%"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">
+				<font color='red'>*</font>
+				<label id="deviceTypeLabel"></label>
+			</td>
+			<td align="left">
+				<!-- <input type="text" id="deviceType" name="deviceType"  value="2" style="color:gray;" onfocus="textOnF(this);" onblur="textOnB(this);">-->
+				<input type="text" id="deviceType" name="deviceType"  value="2" style="color:gray;" onfocus="textOnF(this);" onblur="textOnB(this);">
+			</td>
+			<td align="left"><span class="span_tip" id="deviceTypeErrTip"></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left">
+				<font color='red'>*</font>
+				<label id="fromIndexLabel"></label>
+			</td>
+			<td align="left">
+				<input type="text" id="fromIndexVal" name="fromIndexVal"  value="1" style="color:gray;" onfocus="textOnF(this);" onblur="textOnB(this);">
+			</td>
+			<td align="left"><span class="span_tip" id="fromIndexErrTip"></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left">
+				<font color='red'>*</font>
+				<label id="toIndexLabel"></label>
+			</td>
+			<td align="left">
+				<input type="text" id="toIndexVal" name="toIndexVal"  value="2" style="color:gray;" onfocus="textOnF(this);" onblur="textOnB(this);">
+			</td>
+			<td align="left"><span class="span_tip" id="toIndexErrTip"></span></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td align="left"><input class="btn_login" type="button"
+				id="getDeviceListBtn" onclick="getDeviceList();">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade>
+</div>
+
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%"><label id="outputParam"></label>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%"><label id="resultCode"></label>
+			</td>
+			<td align="left"><input type="text" id="getDeviceList_resultCode"
+				name="getDeviceList_resultCode" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" valign="top"><label id="deviceListLabel"></label>
+			</td>
+			<td align="left"><textarea type="text" id="deviceList"
+					name="deviceList" readonly="readonly"></textarea>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade>
+</div>
+
+<div class="status_div">
+	<label algin="left" id="getDeviceList_status"  style="color:red;"></label>
+</div>

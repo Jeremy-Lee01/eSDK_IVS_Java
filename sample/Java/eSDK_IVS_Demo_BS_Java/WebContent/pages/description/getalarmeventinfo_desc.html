@@ -1,0 +1,2573 @@
+<a name="top" class="a_anchor_top"></a>
+<label class="description_label"
+	style="font-weight: bold; color: #3575B9;" id="Function"></label>
+<br />
+<label class="description_label" id="getalarmeventinfoExFunctionDesc"></label>
+<br />
+<label class="description_label"
+	style="font-weight: bold; color: #3575B9;" id="Access"></label>
+<br />
+<label class="description_label" id="getalarmeventinfoExAccessDesc"></label>
+<br />
+
+<div class="description_input_div">
+	<!-- 输入参数描述 -->
+	<label class="description_label" id="inputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>alarmEventId</td>
+			<td>Long</td>
+			<td>1</td>
+			<td><label id="alarmEventIdInputTd"></td>
+		</tr>
+		<tr>
+			<td>alarmInCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmInCodeInputTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- 返回参数描述 -->
+	<label class="description_label" id="outputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="outputParameterTd"></label></td>
+			<td width="20%"><label id="outputTypeTd"></label></td>
+			<td width="12%"><label id="outputRestrictionTd"></label></td>
+			<td width="48%"><label id="outputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>resultCode</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="resultCodeTd"></td>
+		</tr>
+		<tr>
+			<td>alarmEvent</td>
+			<!-- 使用锚点连接跳转 -->
+			<td><a name="AlarmEventBk" class="a_anchor" href="#AlarmEvent">AlarmEvent</a></td>
+			<td>1</td>
+			<td><label id="alarmEventInfoOutputTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AlarmEvent描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AlarmEvent">AlarmEvent:</a></label>
+	</div>
+	<div class="left">
+		<a href="#AlarmEventBk"><img class="back_img"
+			src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="alarmEventParameterTd"></label></td>
+			<td width="20%"><label id="alarmEventTypeTd"></label></td>
+			<td width="12%"><label id="alarmEventRestrictionTd"></label></td>
+			<td width="48%"><label id="alarmEventDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>alarmNotify</td>
+			<td><a name="AlarmNotifyBk" class="a_anchor" href="#AlarmNotify">AlarmNotify</a></td>
+			<td>1</td>
+			<td><label id="alarmNotifyInputTd"></td>
+		</tr>
+		<tr>
+			<td>operateInfo</td>
+			<td><a name="AlarmOperateInfoBk" class="a_anchor" href="#AlarmOperateInfo">AlarmOperateInfo</a></td>
+			<td>1</td>
+			<td><label id="alarmEventInfoInputTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AlarmNotify描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AlarmNotify">AlarmNotify:</a></label>
+	</div>
+	<div class="left">
+		<a href="#AlarmNotifyBk"><img class="back_img"
+			src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="alarmNotifyParameterTd"></label></td>
+			<td width="20%"><label id="alarmNotifyTypeTd"></label></td>
+			<td width="12%"><label id="alarmNotifyRestrictionTd"></label></td>
+			<td width="48%"><label id="alarmNotifyDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>alarmEventId</td>
+			<td>Long</td>
+			<td>1</td>
+			<td><label id="alarmEventIdTd"></td>
+		</tr>
+		<tr>
+			<td>alarmInCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmInCodeTd"></td>
+		</tr>
+		<tr>
+			<td>deviceDomainCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="deviceDomainCodeTd"></td>
+		</tr>
+		<tr>
+			<td>alarmInType</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="alarmInTypeTd"></td>
+		</tr>
+		<tr>
+			<td>alarmInName</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmInNameTd"></td>
+		</tr>
+		<tr>
+			<td>alarmLevelValue</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="alarmLevelValueTd"></td>
+		</tr>
+		<tr>
+			<td>alarmLevelName</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmLevelNameTd"></td>
+		</tr>
+		<tr>
+			<td>alarmLevelColor</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmLevelColorTd"></td>
+		</tr>
+		<tr>
+			<td>alarmType</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmTypeTd"></td>
+		</tr>
+		<tr>
+			<td>alarmTypeName</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmTypeNameTd"></td>
+		</tr>
+		<tr>
+			<td>alarmCategory</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmCategoryTd"></td>
+		</tr>
+		<tr>
+			<td>occurTime</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="occurTimeTd"></td>
+		</tr>
+		<tr>
+			<td>occurNumber</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="occurNumberTd"></td>
+		</tr>
+		<tr>
+			<td>alarmStatus</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="alarmStatusTd"></td>
+		</tr>
+		<tr>
+			<td>isCommission</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="isCommissionTd"></td>
+		</tr>
+		<tr>
+			<td>previewUrl</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="previewUrlTd"></td>
+		</tr>
+		<tr>
+			<td>existsRecord</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="existsRecordTd"></td>
+		</tr>
+		<tr>
+			<td>nvrCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="nvrCodeTd"></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="reserveTd32"></td>
+		</tr>
+		<tr>
+			<td>alarmDesc</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmDescTd"></td>
+		</tr>
+		<tr>
+			<td>extParam</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="extParamTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AlarmOperateInfo描述 -->
+	<div>
+		<div class="left">
+			<label class="description_label"><a name="AlarmOperateInfo">AlarmOperateInfo:</a></label>
+		</div>
+		<div class="left">
+			<a href="#AlarmOperateInfoBk"><img class="back_img"
+				src="pic/back.png"></a>
+		</div>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="alarmOperateInfoParameterTd"></label></td>
+			<td width="20%"><label id="alarmOperateInfoTypeTd"></label></td>
+			<td width="12%"><label id="alarmOperateInfoRestrictionTd"></label></td>
+			<td width="48%"><label id="alarmOperateInfoDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>operatorId</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="operatorIdTd"></td>
+		</tr>
+		<tr>
+			<td>operatorName</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="operatorNameTd"></td>
+		</tr>
+		<tr>
+			<td>operateTime</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="operateTimeTd"></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="reserveTd"></td>
+		</tr>
+		<tr>
+			<td>operateInfo</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="operateInfoTd"></td>
+		</tr>
+	</table>
+</div>
+
+
+<!-- Appendix -->
+
+<div class="description_output_div">
+	<!-- Appendix描述 -->
+	<div>
+		<div class="left">
+			<label class="description_label"><a name="Appendix"><label id="AppendixTile">:</a></label>
+		</div>
+		<div class="left">
+			<a href="#AppendixBk"><img class="back_img"
+				src="pic/back.png"></a>
+		</div>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="12%"><label id="classificationTd"></label></td>
+			<td width="23%"><label id="alarmTypesTd"></label></td>
+			<td width="23%"><label id="alarmTypeDescTd"></label></td>
+			<td width="14%"><label id="deviceTypeTd"></label></td>
+			<td width="14%"><label id="warningLevelTd"></label></td>
+			<td width="14%"><label id="categoryTd"></label></td>
+		</tr>
+		<tr>
+			<td><label id="alarmInputTd"></td>
+			<td>ALARM_TYPE_DI</td>
+			<td><label id="ALARM_TYPE_DI"></td>
+			<td>2</td>
+			<td>100</td>
+			<td>101</td>
+		</tr>
+
+		<tr>
+			<td rowspan="18"><label id="videoCameraTd"></td>
+			<td>ALARM_NO_SIGNAL</td>
+			<td><label id="ALARM_NO_SIGNAL"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>101</td>
+		</tr>
+		<tr>
+			<td>ALARM_SHIELD</td>
+			<td><label id="ALARM_SHIELD"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>101</td>
+		</tr>
+		<tr>
+			<td>ALARM_TYPE_MOVE_DECTION</td>
+			<td><label id="ALARM_TYPE_MOVE_DECTION"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>101</td>
+		</tr>
+		<tr>
+			<td>ALARM_VIDEO_G</td>
+			<td><label id="ALARM_VIDEO_G"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>101</td>
+		</tr>
+		<tr>
+			<td>ALARM_INTRUSION</td>
+			<td><label id="ALARM_INTRUSION"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_TRIP_LINE</td>
+			<td><label id="ALARM_TRIP_LINE"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_OBJECT_ABANDONED</td>
+			<td><label id="ALARM_OBJECT_ABANDONED"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_OBJECT_REMOVAL</td>
+			<td><label id="ALARM_OBJECT_REMOVAL"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_PRESENCE</td>
+			<td><label id="ALARM_PRESENCE"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_PATH</td>
+			<td><label id="ALARM_PATH"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_DIRECTION_MOVE</td>
+			<td><label id="ALARM_DIRECTION_MOVE"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_SPEED</td>
+			<td><label id="ALARM_SPEED"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_SPEED_MONITOR</td>
+			<td><label id="ALARM_SPEED_MONITOR"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_OBJECT_WANDER</td>
+			<td><label id="ALARM_OBJECT_WANDER"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_DENSITY_MONITOR</td>
+			<td><label id="ALARM_DENSITY_MONITOR"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10201</td>
+		</tr>
+		<tr>
+			<td>ALARM_FACE_RECOGNITION_WARNING</td>
+			<td><label id="ALARM_FACE_RECOGNITION_WARNING"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10202</td>
+		</tr>
+		<tr>
+			<td>ALARM_FACE_RECOGNITION</td>
+			<td><label id="ALARM_FACE_RECOGNITION"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10202</td>
+		</tr>
+		<tr>
+			<td>ALARM_FACE_CAPTURE</td>
+			<td><label id="ALARM_FACE_CAPTURE"></td>
+			<td>1</td>
+			<td>100</td>
+			<td>10202</td>
+		</tr>
+		<tr>
+			<td rowspan="10"><label id="videoDiagnosisTd"></td>
+			<td>ALARM_MAU_VQD_BRIGHTNESS</td>
+			<td><label id="ALARM_MAU_VQD_BRIGHTNESS"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_DARKNESS</td>
+			<td><label id="ALARM_MAU_VQD_DARKNESS"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_BLUR</td>
+			<td><label id="ALARM_MAU_VQD_BLUR"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_SNOWNOISE</td>
+			<td><label id="ALARM_MAU_VQD_SNOWNOISE"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_COLORCAST</td>
+			<td><label id="ALARM_MAU_VQD_COLORCAST"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_STRIPENOISE</td>
+			<td><label id="ALARM_MAU_VQD_STRIPENOISE"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_FRAMEFROZEN</td>
+			<td><label id="ALARM_MAU_VQD_FRAMEFROZEN"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_SHAKE</td>
+			<td><label id="ALARM_MAU_VQD_SHAKE"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VQD_CAMERACOVERD</td>
+			<td><label id="ALARM_MAU_VQD_CAMERACOVERD"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_VIDEO_LOST</td>
+			<td><label id="ALARM_MAU_VIDEO_LOST"></td>
+			<td>1</td>
+			<td>80</td>
+			<td>10203</td>
+		</tr>
+		<tr>
+			<td rowspan="33"><label id="externalSystemAlarmTypeTd"></td>
+			<td>EXSYS_ALARM_EMERGENCY_ON</td>
+			<td><label id="EXSYS_ALARM_EMERGENCY_ON"></td>
+			<td>9</td>
+			<td>100</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_EMERGENCY_OFF</td>
+			<td><label id="EXSYS_ALARM_EMERGENCY_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_FIRE_ALERT_ON</td>
+			<td><label id="EXSYS_ALARM_FIRE_ALERT_ON"></td>
+			<td>9</td>
+			<td>100</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_FIRE_ALERT_OFF</td>
+			<td><label id="EXSYS_ALARM_FIRE_ALERT_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ROBBERY_ON</td>
+			<td><label id="EXSYS_ALARM_ROBBERY_ON"></td>
+			<td>9</td>
+			<td>100</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ROBBERY_OFF</td>
+			<td><label id="EXSYS_ALARM_ROBBERY_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_STEAL_ON</td>
+			<td><label id="EXSYS_ALARM_STEAL_ON"></td>
+			<td>9</td>
+			<td>100</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_STEAL_OFF</td>
+			<td><label id="EXSYS_ALARM_STEAL_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ALERT_ON</td>
+			<td><label id="EXSYS_ALARM_ALERT_ON"></td>
+			<td>9</td>
+			<td>100</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ALERT_OFF</td>
+			<td><label id="EXSYS_ALARM_ALERT_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_MONITOR_ON</td>
+			<td><label id="EXSYS_ALARM_MONITOR_ON"></td>
+			<td>9</td>
+			<td>100</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_MONITOR_OFF</td>
+			<td><label id="EXSYS_ALARM_MONITOR_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_FAILURE_ON</td>
+			<td><label id="EXSYS_ALARM_FAILURE_ON"></td>
+			<td>9</td>
+			<td>80</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_FAILURE_OFF</td>
+			<td><label id="EXSYS_ALARM_FAILURE_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_DEFENCE_ON</td>
+			<td><label id="EXSYS_ALARM_DEFENCE_ON"></td>
+			<td>9</td>
+			<td>80</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_DEFENCE_OFF</td>
+			<td><label id="EXSYS_ALARM_DEFENCE_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+
+
+		<tr>
+			<td>EXSYS_ALARM_REMOTE_CONTROL_ON</td>
+			<td><label id="EXSYS_ALARM_REMOTE_CONTROL_ON"></td>
+			<td>9</td>
+			<td>50</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_REMOTE_CONTROL_OFF</td>
+			<td><label id="EXSYS_ALARM_REMOTE_CONTROL_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ENTER_EXIT_ON</td>
+			<td><label id="EXSYS_ALARM_ENTER_EXIT_ON"></td>
+			<td>9</td>
+			<td>50</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ENTER_EXIT_OFF</td>
+			<td><label id="EXSYS_ALARM_ENTER_EXIT_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_STATUS_ON</td>
+			<td><label id="EXSYS_ALARM_STATUS_ON"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_STATUS_OFF</td>
+			<td><label id="EXSYS_ALARM_STATUS_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_SHUTDOWN_ON</td>
+			<td><label id="EXSYS_ALARM_SHUTDOWN_ON"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_SHUTDOWN_OFF</td>
+			<td><label id="EXSYS_ALARM_SHUTDOWN_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_BYPASS_ON</td>
+			<td><label id="EXSYS_ALARM_BYPASS_ON"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_BYPASS_OFF</td>
+			<td><label id="EXSYS_ALARM_BYPASS_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_TEST_ON</td>
+			<td><label id="EXSYS_ALARM_TEST_ON"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_TEST_OFF</td>
+			<td><label id="EXSYS_ALARM_TEST_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_USER_OPERATION_ON</td>
+			<td><label id="EXSYS_ALARM_USER_OPERATION_ON"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_USER_OPERATION_OFF</td>
+			<td><label id="EXSYS_ALARM_USER_OPERATION_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ERROR_ON</td>
+			<td><label id="EXSYS_ALARM_ERROR_ON"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_ERROR_OFF</td>
+			<td><label id="EXSYS_ALARM_ERROR_OFF"></td>
+			<td>9</td>
+			<td>1</td>
+			<td>103</td>
+		</tr>
+		<tr>
+			<td>EXSYS_ALARM_SCADA</td>
+			<td><label id="EXSYS_ALARM_SCADA"></td>
+			<td>9</td>
+			<td>80</td>
+			<td>103</td>
+		</tr>
+
+
+		<!-- 		 -->
+
+		<tr></tr>
+		<tr>
+			<td rowspan="9"><label id="alarmEquipmentOnlineTd"></td>
+			<td>ALARM_IPC_ONLINE</td>
+			<td><label id="ALARM_IPC_ONLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_OFFLINE</td>
+			<td><label id="ALARM_IPC_OFFLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_SCHEDULE</td>
+			<td><label id="ALARM_IPC_SCHEDULE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVR_ONLINE</td>
+			<td><label id="ALARM_DVR_ONLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVR_OFFLINE</td>
+			<td><label id="ALARM_DVR_OFFLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVS_ONLINE</td>
+			<td><label id="ALARM_DVS_ONLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVS_OFFLINE</td>
+			<td><label id="ALARM_DVS_OFFLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_eNVR_ONLINE</td>
+			<td><label id="ALARM_eNVR_ONLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_eNVR_OFFLINE</td>
+			<td><label id="ALARM_eNVR_OFFLINE"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+
+
+
+		<tr>
+			<td rowspan="8">IPC</td>
+			<td>ALARM_IPC_DISK_FULL_ON</td>
+			<td><label id="ALARM_IPC_DISK_FULL_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_DISK_FULL_OFF</td>
+			<td><label id="ALARM_IPC_DISK_FULL_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_SD_CARD_FAULT_ON</td>
+			<td><label id="ALARM_IPC_SD_CARD_FAULT_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_SD_CARD_FAULT_OFF</td>
+			<td><label id="ALARM_IPC_SD_CARD_FAULT_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_TEMPERATURE_ON</td>
+			<td><label id="ALARM_IPC_TEMPERATURE_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_TEMPERATURE_OFF</td>
+			<td><label id="ALARM_IPC_TEMPERATURE_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_CPU_HIGH</td>
+			<td><label id="ALARM_IPC_CPU_HIGH"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_IPC_MEMORY_HIGH</td>
+			<td><label id="ALARM_IPC_MEMORY_HIGH"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+
+
+		<tr>
+			<td rowspan="4">DVR</td>
+			<td>ALARM_DVR_DISK_FULL_ON</td>
+			<td><label id="ALARM_DVR_DISK_FULL_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVR_DISK_FULL_OFF</td>
+			<td><label id="ALARM_DVR_DISK_FULL_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVR_DISK_FAULT_ON</td>
+			<td><label id="ALARM_DVR_DISK_FAULT_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVR_DISK_FAULT_OFF</td>
+			<td><label id="ALARM_DVR_DISK_FAULT_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+
+		<tr>
+			<td rowspan="4">DVS</td>
+			<td>ALARM_DVS_DISK_FULL_ON</td>
+			<td><label id="ALARM_DVS_DISK_FULL_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVS_DISK_FULL_OFF</td>
+			<td><label id="ALARM_DVS_DISK_FULL_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVS_DISK_FAULT_ON</td>
+			<td><label id="ALARM_DVS_DISK_FAULT_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DVS_DISK_FAULT_OFF</td>
+			<td><label id="ALARM_DVS_DISK_FAULT_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="4">eNVR</td>
+			<td>ALARM_eNVR_DISK_FULL_ON</td>
+			<td><label id="ALARM_eNVR_DISK_FULL_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_eNVR_DISK_FULL_OFF</td>
+			<td><label id="ALARM_eNVR_DISK_FULL_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_eNVR_DISK_FAULT_ON</td>
+			<td><label id="ALARM_eNVR_DISK_FAULT_ON"></td>
+			<td>0</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_eNVR_DISK_FAULT_OFF</td>
+			<td><label id="ALARM_eNVR_DISK_FAULT_OFF"></td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="58">MU</td>
+			<td>ALARM_MU_OVERLOAD_ON</td>
+			<td><label id="ALARM_MU_OVERLOAD_ON"></td>
+			<td>10</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_SECURE_TRANS_FAIL</td>
+			<td><label id="ALARM_RECORD_SECURE_TRANS_FAIL"></td>
+			<td>10</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_DISK_FULL_ON</td>
+			<td><label id="ALARM_RECORD_DISK_FULL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_DISK_FULL_OFF</td>
+			<td><label id="ALARM_RECORD_DISK_FULL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_DISK_FULL_ON</td>
+			<td><label id="ALARM_BACKUP_DISK_FULL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_DISK_FULL_OFF</td>
+			<td><label id="ALARM_BACKUP_DISK_FULL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_DISK_FAULT_ON</td>
+			<td><label id="ALARM_RECORD_DISK_FAULT_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_DISK_FAULT_OFF</td>
+			<td><label id="ALARM_RECORD_DISK_FAULT_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_FULL_STOP_ON</td>
+			<td><label id="ALARM_RECORD_FULL_STOP_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_FULL_STOP_OFF</td>
+			<td><label id="ALARM_RECORD_FULL_STOP_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_FULL_STOP_ON</td>
+			<td><label id="ALARM_BACKUP_FULL_STOP_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_FULL_STOP_OFF</td>
+			<td><label id="ALARM_BACKUP_FULL_STOP_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_WRITE_INDEX_DATA_FAILE</td>
+			<td><label id="ALARM_RECORD_WRITE_INDEX_DATA_FAILE"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_WRITE_INDEX_DATA_FAILE</td>
+			<td><label id="ALARM_BACKUP_WRITE_INDEX_DATA_FAILE"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_IO_OVERLOAD_ON</td>
+			<td><label id="ALARM_RECORD_IO_OVERLOAD_ON"></td>
+			<td>10</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_IO_OVERLOAD_OFF</td>
+			<td><label id="ALARM_RECORD_IO_OVERLOAD_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_IO_OVERLOAD_ON</td>
+			<td><label id="ALARM_BACKUP_IO_OVERLOAD_ON"></td>
+			<td>10</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_IO_OVERLOAD_OFF</td>
+			<td><label id="ALARM_BACKUP_IO_OVERLOAD_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_LUN_FAULT_ON</td>
+			<td><label id="ALARM_RECORD_LUN_FAULT_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_LUN_FAULT_OFF</td>
+			<td><label id="ALARM_RECORD_LUN_FAULT_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_LUN_FAULT_ON</td>
+			<td><label id="ALARM_BACKUP_LUN_FAULT_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_BACKUP_LUN_FAULT_OFF</td>
+			<td><label id="ALARM_BACKUP_LUN_FAULT_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_STREAM_ERROR_GENERAL_ON</td>
+			<td><label id="ALARM_RECORD_STREAM_ERROR_GENERAL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_STREAM_ERROR_GENERAL_OFF</td>
+			<td><label id="ALARM_RECORD_STREAM_ERROR_GENERAL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_STREAM_ERROR_TIMEOUT_ON</td>
+			<td><label id="ALARM_RECORD_STREAM_ERROR_TIMEOUT_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_RECORD_STREAM_ERROR_TIMEOUT_OFF</td>
+			<td><label id="ALARM_RECORD_STREAM_ERROR_TIMEOUT_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_ONLINE</td>
+			<td><label id="ALARM_MU_ONLINE"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_OFFLINE</td>
+			<td><label id="ALARM_MU_OFFLINE"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_MU_LOG_BCK_FAIL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_MU_LOG_BCK_FAIL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MU_ALARM_RECORD_FAIL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MU_ALARM_RECORD_FAIL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MU_LOG_RECORD_FAIL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MU_LOG_RECORD_FAIL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_MU_CONFIG_READ_FAIL"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_DB_CONNECT_FAIL_ON</td>
+			<td><label id="ALARM_MU_DB_CONNECT_FAIL_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_DB_CONNECT_FAIL_OFF</td>
+			<td><label id="ALARM_MU_DB_CONNECT_FAIL_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_MU_FRAME_EXTRACTION_FAIL</td>
+			<td><label id="ALARM_MU_FRAME_EXTRACTION_FAIL"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SAFEVIDEO_ONLINE</td>
+			<td><label id="ALARM_SAFEVIDEO_ONLINE"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SAFEVIDEO_OFFLINE</td>
+			<td><label id="ALARM_SAFEVIDEO_OFFLINE"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_MU_LINK_ERROR_ON</td>
+			<td><label id="ALARM_SCU_MU_LINK_ERROR_ON"></td>
+			<td>10</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_MU_LINK_ERROR_OFF</td>
+			<td><label id="ALARM_SCU_MU_LINK_ERROR_OFF"></td>
+			<td>10</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_RAID_MTR_FS_ERROR</td>
+			<td><label id="SMIO_RAID_MTR_FS_ERROR"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_RAID_MTR_FS_RECOVER</td>
+			<td><label id="SMIO_RAID_MTR_FS_RECOVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_RAID_MTR_ERR_CAPACITY</td>
+			<td><label id="SMIO_RAID_MTR_ERR_CAPACITY"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_SYS_DISK_OUT</td>
+			<td><label id="SMIO_JBOD_SYS_DISK_OUT"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_SYS_DISK_IN</td>
+			<td><label id="SMIO_JBOD_SYS_DISK_IN"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_DATA_DISK_OUT</td>
+			<td><label id="SMIO_JBOD_DATA_DISK_OUT"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_DATA_DISK_IN</td>
+			<td><label id="SMIO_JBOD_DATA_DISK_IN"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_RAID_DISK_IN</td>
+			<td><label id="SMIO_JBOD_RAID_DISK_IN"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_RAID_DISK_OUT</td>
+			<td><label id="SMIO_JBOD_RAID_DISK_OUT"></td>
+			<td>11</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_DISK_FAIL_IMPEND</td>
+			<td><label id="SMIO_JBOD_DISK_FAIL_IMPEND"></td>
+			<td>11</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_DISK_FAIL_RECOVER</td>
+			<td><label id="SMIO_JBOD_DISK_FAIL_RECOVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_DISK_FAULT</td>
+			<td><label id="SMIO_JBOD_DISK_FAULT"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_FORMAT_NO_DISK</td>
+			<td><label id="SMIO_FORMAT_NO_DISK"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_FORMAT_BAD_DISK</td>
+			<td><label id="SMIO_FORMAT_BAD_DISK"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_FORMAT_FAILIMPEND_DISK</td>
+			<td><label id="SMIO_FORMAT_FAILIMPEND_DISK"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_SLOW_DISK</td>
+			<td><label id="SMIO_JBOD_SLOW_DISK"></td>
+			<td>11</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="16">OMU</td>
+			<td>SMIO_GROUP_DEGRADE</td>
+			<td><label id="SMIO_GROUP_DEGRADE"></td>
+			<td>11</td>
+			<td>50</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_DATA_RECOVER</td>
+			<td><label id="SMIO_GROUP_DATA_RECOVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_DATA_RECOVER_OVER</td>
+			<td><label id="SMIO_GROUP_DATA_RECOVER_OVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_DATA_COPYBACK</td>
+			<td><label id="SMIO_GROUP_DATA_COPYBACK"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_DATA_COPYBACK_OVER</td>
+			<td><label id="SMIO_GROUP_DATA_COPYBACK_OVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_NO_SPARE</td>
+			<td><label id="SMIO_GROUP_NO_SPARE"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_RESUME_SPARE</td>
+			<td><label id="SMIO_GROUP_RESUME_SPARE"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_RECOVER_FAIL</td>
+			<td><label id="SMIO_GROUP_RECOVER_FAIL"></td>
+			<td>11</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_BUSY_DISK</td>
+			<td><label id="SMIO_JBOD_BUSY_DISK"></td>
+			<td>11</td>
+			<td>50</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_RAID_SYS_DISK_DEGRADE</td>
+			<td><label id="SMIO_JBOD_RAID_SYS_DISK_DEGRADE"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_RAID_SYS_DISK_RECOVER_OVER</td>
+			<td><label id="SMIO_JBOD_RAID_SYS_DISK_RECOVER_OVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_INIT_FAIL</td>
+			<td><label id="SMIO_GROUP_INIT_FAIL"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_INIT_OK</td>
+			<td><label id="SMIO_GROUP_INIT_OK"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_JBOD_RAID_SYS_DISK_RECOVER</td>
+			<td><label id="SMIO_JBOD_RAID_SYS_DISK_RECOVER"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_NOT_AVAIL</td>
+			<td><label id="SMIO_GROUP_NOT_AVAIL"></td>
+			<td>11</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>SMIO_GROUP_AVAIL</td>
+			<td><label id="SMIO_GROUP_AVAIL"></td>
+			<td>11</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="14">DCG</td>
+			<td>ALARM_DCG_ONLINE</td>
+			<td><label id="ALARM_DCG_ONLINE"></td>
+			<td>12</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_OFFLINE</td>
+			<td><label id="ALARM_DCG_OFFLINE"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_SYS_PORT_CONFLICT</td>
+			<td><label id="ALARM_DCG_SYS_PORT_CONFLICT"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_DCG_LOG_BCK_FAIL_ON"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_DCG_LOG_BCK_FAIL_OFF"></td>
+			<td>12</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_DCG_LOG_RECORD_FAIL_ON"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_DCG_LOG_RECORD_FAIL_OFF"></td>
+			<td>12</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_DCG_ALARM_RECORD_FAIL_ON"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_DCG_ALARM_RECORD_FAIL_OFF"></td>
+			<td>12</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_DCG_CONFIG_READ_FAIL"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_FLOW_CONTROL_ERROR_ON</td>
+			<td><label id="ALARM_DCG_FLOW_CONTROL_ERROR_ON"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_DCG_FLOW_CONTROL_ERROR_OFF</td>
+			<td><label id="ALARM_DCG_FLOW_CONTROL_ERROR_OFF"></td>
+			<td>12</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_EXTEND_SYSTEM_ONLINE</td>
+			<td><label id="ALARM_EXTEND_SYSTEM_ONLINE"></td>
+			<td>12</td>
+			<td>1</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_EXTEND_SYSTEM_OFFLINE</td>
+			<td><label id="ALARM_EXTEND_SYSTEM_OFFLINE"></td>
+			<td>12</td>
+			<td>100</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td rowspan="17">SMU</td>
+			<td>ALARM_REACH_ALL_LOACL_LENS</td>
+			<td><label id="ALARM_REACH_ALL_LOACL_LENS"></td>
+			<td>13</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_REACHED_ALL_LOACL_LENS</td>
+			<td><label id="ALARM_REACHED_ALL_LOACL_LENS"></td>
+			<td>13</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_SMU_LOG_BCK_FAIL_ON"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_SMU_LOG_BCK_FAIL_OFF"></td>
+			<td>17</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_SMU_LOG_RECORD_FAIL_ON"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_SMU_LOG_RECORD_FAIL_OFF"></td>
+			<td>17</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_SMU_ALARM_RECORD_FAIL_ON"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_SMU_ALARM_RECORD_FAIL_OFF"></td>
+			<td>17</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_SMU_CONFIG_READ_FAIL"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_ONLINE</td>
+			<td><label id="ALARM_SMU_ONLINE"></td>
+			<td>17</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_OFFLINE</td>
+			<td><label id="ALARM_SMU_OFFLINE"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_DB_CONNECT_FAIL_ON</td>
+			<td><label id="ALARM_SMU_DB_CONNECT_FAIL_ON"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_DB_CONNECT_FAIL_OFF</td>
+			<td><label id="ALARM_SMU_DB_CONNECT_FAIL_OFF"></td>
+			<td>17</td>
+			<td>1</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_FLOW_CONTROL_ERROR_ON</td>
+			<td><label id="ALARM_SMU_FLOW_CONTROL_ERROR_ON"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_FLOW_CONTROL_ERROR_OFF</td>
+			<td><label id="ALARM_SMU_FLOW_CONTROL_ERROR_OFF"></td>
+			<td>17</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_MULTI_PCG_ERROR</td>
+			<td><label id="ALARM_SMU_MULTI_PCG_ERROR"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SMU_DEV_SYNC_ERROR</td>
+			<td><label id="ALARM_SMU_DEV_SYNC_ERROR"></td>
+			<td>17</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="20">SCU</td>
+			<td>ALARM_SCU_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_SCU_LOG_BCK_FAIL_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_SCU_LOG_BCK_FAIL_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_SCU_LOG_RECORD_FAIL_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_SCU_LOG_RECORD_FAIL_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_SCU_ALARM_RECORD_FAIL_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_SCU_ALARM_RECORD_FAIL_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_SCU_CONFIG_READ_FAIL"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_ONLINE</td>
+			<td><label id="ALARM_SCU_ONLINE"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_OFFLINE</td>
+			<td><label id="ALARM_SCU_OFFLINE"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_DB_CONNECT_FAIL_ON</td>
+			<td><label id="ALARM_SCU_DB_CONNECT_FAIL_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_DB_CONNECT_FAIL_OFF</td>
+			<td><label id="ALARM_SCU_DB_CONNECT_FAIL_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_SMU_LINK_ERROR_ON</td>
+			<td><label id="ALARM_SCU_SMU_LINK_ERROR_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_SMU_LINK_ERROR_OFF</td>
+			<td><label id="ALARM_SCU_SMU_LINK_ERROR_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_DCG_LINK_ERROR_ON</td>
+			<td><label id="ALARM_SCU_DCG_LINK_ERROR_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_DCG_LINK_ERROR_OFF</td>
+			<td><label id="ALARM_SCU_DCG_LINK_ERROR_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_FLOW_CONTROL_ERROR_ON</td>
+			<td><label id="ALARM_SCU_FLOW_CONTROL_ERROR_ON"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_FLOW_CONTROL_ERROR_OFF</td>
+			<td><label id="ALARM_SCU_FLOW_CONTROL_ERROR_OFF"></td>
+			<td>18</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_SNAPSHOT_DISK_FULL_ON</td>
+			<td><label id="ALARM_SCU_SNAPSHOT_DISK_FULL_ON"></td>
+			<td></td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_SNAPSHOT_DISK_FULL_OFF</td>
+			<td><label id="ALARM_SCU_SNAPSHOT_DISK_FULL_OFF"></td>
+			<td></td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_SCU_DEV_OFFLINE_CONFIG_FAIL</td>
+			<td><label id="ALARM_SCU_DEV_OFFLINE_CONFIG_FAIL"></td>
+			<td>18</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="13">PCG</td>
+			<td>ALARM_PCG_LOG_BCK_FAIL_ON</td>
+
+			<td><label id="ALARM_PCG_LOG_BCK_FAIL_ON"></td>
+			<td>15</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_PCG_LOG_BCK_FAIL_OFF"></td>
+			<td>15</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_PCG_LOG_RECORD_FAIL_ON"></td>
+			<td>15</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_PCG_LOG_RECORD_FAIL_OFF"></td>
+			<td>15</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_PCG_CONFIG_READ_FAIL"></td>
+			<td>15</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_PCG_ALARM_RECORD_FAIL_ON"></td>
+			<td>15</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_PCG_ALARM_RECORD_FAIL_OFF"></td>
+			<td>15</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_ONLINE</td>
+			<td><label id="ALARM_PCG_ONLINE"></td>
+			<td>15</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_OFFLINE</td>
+			<td><label id="ALARM_PCG_OFFLINE"></td>
+			<td>15</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_EXDOMAIN_ONLINE</td>
+			<td><label id="ALARM_PCG_EXDOMAIN_ONLINE"></td>
+			<td>15</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_EXDOMAIN_OFFLINE</td>
+			<td><label id="ALARM_PCG_EXDOMAIN_OFFLINE"></td>
+			<td>15</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_REGISTER_FAIL_ON</td>
+			<td><label id="ALARM_PCG_REGISTER_FAIL_ON"></td>
+			<td>15</td>
+			<td>80</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_PCG_REGISTER_FAIL_OFF</td>
+			<td><label id="ALARM_PCG_REGISTER_FAIL_OFF"></td>
+			<td>15</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="8">MTU</td>
+			<td>ALARM_MTU_HTTPS_ONLINE</td>
+			<td><label id="ALARM_MTU_HTTPS_ONLINE"></td>
+			<td>29</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_HTTPS_OFFLINE</td>
+			<td><label id="ALARM_MTU_HTTPS_OFFLINE"></td>
+			<td>29</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_RTSP_ONLINE</td>
+			<td><label id="ALARM_MTU_RTSP_ONLINE"></td>
+			<td>30</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_RTSP_OFFLINE</td>
+			<td><label id="ALARM_MTU_RTSP_OFFLINE"></td>
+			<td>30</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_NO_IDLE_LICENSE_ON</td>
+			<td><label id="ALARM_MTU_NO_IDLE_LICENSE_ON"></td>
+			<td>13</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_NO_IDLE_LICENSE_OFF</td>
+			<td><label id="ALARM_MTU_NO_IDLE_LICENSE_OFF"></td>
+			<td>13</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_ONLINE</td>
+			<td><label id="ALARM_MTU_ONLINE"></td>
+			<td>14</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MTU_OFFLINE</td>
+			<td><label id="ALARM_MTU_OFFLINE"></td>
+			<td>14</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="40">MAU</td>
+			<td>ALARM_MAUS_ONLINE</td>
+
+			<td><label id="ALARM_MAUS_ONLINE"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUS_OFFLINE</td>
+			<td><label id="ALARM_MAUS_OFFLINE"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUTS_ONLINE</td>
+			<td><label id="ALARM_MAUTS_ONLINE"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUTS_OFFLINE</td>
+			<td><label id="ALARM_MAUTS_OFFLINE"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAULM_ONLINE</td>
+			<td><label id="ALARM_MAULM_ONLINE"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAULM_OFFLINE</td>
+			<td><label id="ALARM_MAULM_OFFLINE"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUQD_ONLINE</td>
+			<td><label id="ALARM_MAUQD_ONLINE"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUQD_OFFLINE</td>
+			<td><label id="ALARM_MAUQD_OFFLINE"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUBA_ONLINE</td>
+			<td><label id="ALARM_MAUBA_ONLINE"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUBA_OFFLINE</td>
+			<td><label id="ALARM_MAUBA_OFFLINE"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUFR_ONLINE</td>
+			<td><label id="ALARM_MAUFR_ONLINE"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAUFR_OFFLINE</td>
+			<td><label id="ALARM_MAUFR_OFFLINE"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_DISCONNECT_WITH_DB_ON</td>
+			<td><label id="ALARM_MAU_DISCONNECT_WITH_DB_ON"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_DISCONNECT_WITH_DB_OFF</td>
+			<td><label id="ALARM_MAU_DISCONNECT_WITH_DB_OFF"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_BA_NO_IDLE_LICENSE_ON</td>
+			<td><label id="ALARM_MAU_BA_NO_IDLE_LICENSE_ON"></td>
+			<td>13</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_BA_NO_IDLE_LICENSE_OFF</td>
+			<td><label id="ALARM_MAU_BA_NO_IDLE_LICENSE_OFF"></td>
+			<td>13</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_FR_NO_IDLE_LICENSE_ON</td>
+			<td><label id="ALARM_MAU_FR_NO_IDLE_LICENSE_ON"></td>
+			<td>13</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_FR_NO_IDLE_LICENSE_OFF</td>
+			<td><label id="ALARM_MAU_FR_NO_IDLE_LICENSE_OFF"></td>
+			<td>13</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_START_TASK_FAIL</td>
+			<td><label id="ALARM_MAU_START_TASK_FAIL"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_MAU_LOG_BCK_FAIL_ON"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_LOG_BCK_FAIL_OFF"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MAU_LOG_RECORD_FAIL_ON"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_LOG_RECORD_FAIL_OFF"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MAU_ALARM_RECORD_FAIL_ON"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_ALARM_RECORD_FAIL_OFF"></td>
+			<td>16</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_MAU_CONFIG_READ_FAIL"></td>
+			<td>16</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_MAU_QD_LOG_BCK_FAIL_ON"></td>
+			<td>21</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_QD_LOG_BCK_FAIL_OFF"></td>
+			<td>21</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MAU_QD_LOG_RECORD_FAIL_ON"></td>
+			<td>21</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_QD_LOG_RECORD_FAIL_OFF"></td>
+			<td>21</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MAU_QD_ALARM_RECORD_FAIL_ON"></td>
+			<td>21</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_QD_ALARM_RECORD_FAIL_OFF"></td>
+			<td>21</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_QD_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_MAU_QD_CONFIG_READ_FAIL"></td>
+			<td>21</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_MAU_LM_LOG_BCK_FAIL_ON"></td>
+			<td>19</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_LM_LOG_BCK_FAIL_OFF"></td>
+			<td>19</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MAU_LM_LOG_RECORD_FAIL_ON"></td>
+			<td>19</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_LM_LOG_RECORD_FAIL_OFF"></td>
+			<td>19</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_MAU_LM_ALARM_RECORD_FAIL_ON"></td>
+			<td>19</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_MAU_LM_ALARM_RECORD_FAIL_OFF"></td>
+			<td>19</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_MAU_LM_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_MAU_LM_CONFIG_READ_FAIL"></td>
+			<td>19</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="23">OMU</td>
+			<td>ALARM_OMU_ONLINE</td>
+			<td><label id="ALARM_OMU_ONLINE"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_OFFLINE</td>
+			<td><label id="ALARM_OMU_OFFLINE"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_DB_CONNECT_FAIL_ON</td>
+			<td><label id="ALARM_OMU_DB_CONNECT_FAIL_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_DB_CONNECT_FAIL_OFF</td>
+			<td><label id="ALARM_OMU_DB_CONNECT_FAIL_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_OMU_LOG_BCK_FAIL_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_OMU_LOG_BCK_FAIL_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_OMU_LOG_RECORD_FAIL_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_OMU_LOG_RECORD_FAIL_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_OMU_ALARM_RECORD_FAIL_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_OMU_ALARM_RECORD_FAIL_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_OMU_CONFIG_READ_FAIL"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_NOTICE_FAIL</td>
+			<td><label id="ALARM_OMU_NOTICE_FAIL"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_FLOW_CONTROL_ERROR_ON</td>
+			<td><label id="ALARM_OMU_FLOW_CONTROL_ERROR_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_FLOW_CONTROL_ERROR_OFF</td>
+			<td><label id="ALARM_OMU_FLOW_CONTROL_ERROR_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_PROC_REBOOT</td>
+			<td><label id="ALARM_OMU_PROC_REBOOT"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_HA_SWITCH</td>
+			<td><label id="ALARM_OMU_HA_SWITCH"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_HEARTBEAT_UNCONN_ON</td>
+			<td><label id="ALARM_OMU_HEARTBEAT_UNCONN_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_HEARTBEAT_UNCONN_OFF</td>
+			<td><label id="ALARM_OMU_HEARTBEAT_UNCONN_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_HARDDISK_FULL_ON</td>
+			<td><label id="ALARM_OMU_HARDDISK_FULL_ON"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_HARDDISK_FULL_OFF</td>
+			<td><label id="ALARM_OMU_HARDDISK_FULL_OFF"></td>
+			<td>25</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_DRBD_BRAIN_SPLIT</td>
+			<td><label id="ALARM_OMU_DRBD_BRAIN_SPLIT"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_DB_BACKUP_ERROR</td>
+			<td><label id="ALARM_OMU_DB_BACKUP_ERROR"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_OMU_DATASAFE_BACKUP_ERROR</td>
+			<td><label id="ALARM_OMU_DATASAFE_BACKUP_ERROR"></td>
+			<td>25</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td rowspan="18">CMU</td>
+			<td>ALARM_CMU_ONLINE</td>
+			<td><label id="ALARM_CMU_ONLINE"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_OFFLINE</td>
+			<td><label id="ALARM_CMU_OFFLINE"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_LOG_BCK_FAIL_ON</td>
+			<td><label id="ALARM_CMU_LOG_BCK_FAIL_ON"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_LOG_BCK_FAIL_OFF</td>
+			<td><label id="ALARM_CMU_LOG_BCK_FAIL_OFF"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_LOG_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_CMU_LOG_RECORD_FAIL_ON"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_LOG_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_CMU_LOG_RECORD_FAIL_OFF"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_ALARM_RECORD_FAIL_ON</td>
+			<td><label id="ALARM_CMU_ALARM_RECORD_FAIL_ON"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_ALARM_RECORD_FAIL_OFF</td>
+			<td><label id="ALARM_CMU_ALARM_RECORD_FAIL_OFF"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_CONFIG_READ_FAIL</td>
+			<td><label id="ALARM_CMU_CONFIG_READ_FAIL"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_MEMBER_OFFLINE</td>
+			<td><label id="ALARM_CMU_MEMBER_OFFLINE"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_MEMBER_ONLINE</td>
+			<td><label id="ALARM_CMU_MEMBER_ONLINE"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_CLUSTER_OVERLOAD</td>
+			<td><label id="ALARM_CMU_CLUSTER_OVERLOAD"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_MEMBER_OVERLOAD</td>
+			<td><label id="ALARM_CMU_MEMBER_OVERLOAD"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_MEMBER_UNDERLOAD</td>
+			<td><label id="ALARM_CMU_MEMBER_UNDERLOAD"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_MEMBER_FAIL_ON</td>
+			<td><label id="ALARM_CMU_MEMBER_FAIL_ON"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_MEMBER_FAIL_OFF</td>
+			<td><label id="ALARM_CMU_MEMBER_FAIL_OFF"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_FLOW_CONTROL_ERROR_ON</td>
+			<td><label id="ALARM_CMU_FLOW_CONTROL_ERROR_ON"></td>
+			<td>28</td>
+			<td>100</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>ALARM_CMU_FLOW_CONTROL_ERROR_OFF</td>
+			<td><label id="ALARM_CMU_FLOW_CONTROL_ERROR_OFF"></td>
+			<td>28</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+
+	</table>
+</div>

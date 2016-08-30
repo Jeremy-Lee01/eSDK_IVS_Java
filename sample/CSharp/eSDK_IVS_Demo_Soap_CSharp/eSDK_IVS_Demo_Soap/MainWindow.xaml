@@ -1,0 +1,24 @@
+﻿<Window x:Class="eSDK_IVS_Demo_Soap.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="eSDK地址：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="eSDKURIText" Text="https://10.177.44.244:18543" Grid.Column="1" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <Button Content="登录" Click="Login_Click" Grid.Row="1" Grid.Column="0"  Height="30" Width="80" />
+        <TextBox x:Name="LoginText" Text="返回值" Grid.Row="1" Grid.Column="1" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <Button Content="设备列表" Click="DeviceList_Click" Grid.Row="2" Height="35" Width="80" />
+        <TextBox x:Name="DeviceListText" Grid.Row="2" Grid.Column="1" TextWrapping="WrapWithOverflow" Height="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+    </Grid>
+</Window>

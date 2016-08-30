@@ -1,0 +1,85 @@
+.blackBg {
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:9000;
+	width:100%;
+	height:100%;
+	background:#000;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.alertBox {
+	display:none;
+	width:400px;
+	min-height:160px;
+	max-height:300px;
+	height:auto;
+	position:absolute;
+	z-index:9001;
+	left:50%;
+	background:#fff;
+	top:50%;
+	margin-left: -180px;
+    margin-top: -140px;
+}
+
+.alertBox h2.title {
+	height:30px;
+	width:100%;
+	position:relative;
+	float:left;
+	font-size:14px;
+	line-height:30px;
+	text-indent:1em;
+	background:url(../pic/alertTitleBg.jpg) repeat-x;
+}
+
+.alertBox h2.title .close {
+	position:absolute;
+	right:7px;
+	top:7px;
+	width:14px;
+	float:left;
+	height:14px;
+}
+
+.alertBox h2.title .close a {
+	width:14px;
+	height:14px;
+	float:left;
+	background:url(../pic/closeBt_normal.jpg) no-repeat;
+	text-indent:-9999px;
+	cursor: pointer;
+}
+
+.alertBox h2.title .close a:hover {	
+	background:url(../pic/closeBt_hover.jpg) no-repeat;	
+	cursor: pointer;
+}
+
+.alertBox .txtBox {
+    padding:10px; 
+	margin:0 auto 10px auto; 
+	overflow:auto; 
+}
+
+.camera_img{
+	width:45px;
+	height:28px;
+	padding: 10px;
+}
+
+.camera_img:hover{
+	width:55px;
+	height:38px;
+	padding: 5px;
+}
+
+#cemara_ctrl img{
+	cursor: pointer;
+}

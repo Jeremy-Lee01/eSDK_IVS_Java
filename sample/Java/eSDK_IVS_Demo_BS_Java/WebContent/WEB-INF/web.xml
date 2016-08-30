@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>eSDK_IVS_Demo_BS_Java</display-name>
+  <welcome-file-list>
+    <welcome-file>pages/index.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+   <servlet-name>serviceFactory</servlet-name> 
+   <servlet-class>com.huawei.esdk.demo.factory.ServiceFactory</servlet-class> 
+   <load-on-startup>1</load-on-startup> 
+  </servlet>
+
+  <servlet>
+    <servlet-name>alarmServlet</servlet-name>
+    <servlet-class>com.huawei.esdk.demo.servlet.AlarmServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>alarmServlet</servlet-name>
+    <url-pattern>/alarmServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>deviceServlet</servlet-name>
+    <servlet-class>com.huawei.esdk.demo.servlet.DeviceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deviceServlet</servlet-name>
+    <url-pattern>/deviceServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

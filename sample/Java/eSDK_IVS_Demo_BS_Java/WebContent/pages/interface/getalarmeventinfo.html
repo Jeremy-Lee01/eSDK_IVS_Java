@@ -1,0 +1,130 @@
+<ul class="block">
+	<li>
+		<div id="getAlarmEventInfo_desc" class="description_div">
+			<!-- append description -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="getAlarmEventInfo_execution">
+			<!-- append execution code -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="getAlarmEventInfo_src" class="sourcecode_div">
+			<!-- append source code -->
+		</div>
+	</li>
+</ul>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/description/getalarmeventinfo_desc.html",
+			async : false,
+			success : function(data) {
+				$("#getAlarmEventInfo_desc").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/execution/getalarmeventinfo_execution.html",
+			async : false,
+			success : function(data) {
+				$("#getAlarmEventInfo_execution").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/sourcecode/getalarmeventinfo_src.html",
+			async : false,
+			success : function(data) {
+				$("#getAlarmEventInfo_src").html(data);
+			}
+		});
+	});
+
+	function getAlarmEventInfo()
+	{
+		// 清空信息
+		$("#getAlarm_resultCode").val("");
+		$("#alarmEventInfo").val("");
+		$("#alarmEventIdErrTip").html("");
+		$("#alarmInCodeErrTip").html("");
+		$("#getAlarm_status").html("");
+		
+		var alarmEventId = $("#alarmEventId").val();
+		var alarmInCode = $("#alarmInCode").val();
+		
+		// 简单参数校验
+		if (isEmpty(alarmEventId))
+		{
+			$("#alarmEventIdErrTip").html(controller.language.titles["alarmEventIdNull"]);
+			return false;
+		}
+		
+		if (!isNumber(alarmEventId))
+		{
+			$("#alarmEventIdErrTip").html(controller.language.titles["alarmEventIdNotNumber"]);
+			return false;
+		}
+		
+		if (isEmpty(alarmInCode))
+		{
+			$("#alarmInCodeErrTip").html(controller.language.titles["alarmInCodeNull"]);
+			return false;
+		}
+		
+		$.ajax({
+			url : getServerPath()+"/alarmServlet",
+			type : "post",
+			dataType : "json",
+			data : "alarmEventId=" + alarmEventId + "&alarmInCode=" + alarmInCode + "&method=getAlarmEventInfo",
+			async : false,
+			success : function(data)
+			{
+				// 登录登出异常
+				if (null == data.resultCode)
+				{
+					$("#getAlarm_resultCode").val(data);
+					$("#getAlarm_status").html(controller.language.titles["operationFailed"]);
+				}
+				else
+				{
+					$("#getAlarm_resultCode").val(data.resultCode);
+					$("#alarmEventInfo").val(JSON.stringify(data.result));
+					if (0 == data.resultCode)
+					{
+						$("#getAlarm_status").html(controller.language.titles["operationSuccess"]);
+					}
+					else
+					{
+						$("#getAlarm_status").html(controller.language.titles["operationFailed"]);
+					}
+				}
+				
+			},
+			error : function(data)
+			{
+				var res = data.responseText;
+				$("#getAlarm_resultCode").val(res);
+				$("#alarmEventInfo").val("");
+				$("#getAlarm_status").html(controller.language.titles["operationFailed"]);
+			},
+			beforeSend : function()
+			{
+				$("#getAlarm_resultCode").val("");
+				$("#alarmEventInfo").val("");
+			}
+		});
+	}
+</script>

@@ -1,0 +1,187 @@
+<ul class="block">
+	<li>
+		<div id="getDeviceList_desc" class="description_div">
+			<!-- append description -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="getDeviceList_execution">
+			<!-- append source code -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="getDeviceList_src" class="sourcecode_div">
+			<!-- append source code -->
+		</div>
+	</li>
+</ul>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/description/getdevicelist_desc.html",
+			async : false,
+			success : function(data) {
+				$("#getDeviceList_desc").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/execution/getdevicelist_execution.html",
+			async : false,
+			success : function(data) {
+				$("#getDeviceList_execution").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : getServerPath()+"/pages/sourcecode/getdevicelist_src.html",
+			async : false,
+			success : function(data) {
+				$("#getDeviceList_src").html(data);
+			}
+		});
+	});
+
+	function getDeviceList()
+	{
+		$("#getDeviceList_resultCode").val("");
+		$("#deviceList").val("");
+		$("#getDeviceList_status").html("");
+		$("#deviceTypeErrTip").html("");
+		$("#fromIndexErrTip").html("");
+		$("#toIndexErrTip").html("");
+		
+		var deviceType = $("#deviceType").val();
+		var fromIndex = $("#fromIndexVal").val();
+		var toIndex = $("#toIndexVal").val();
+		
+		// 简单参数校验
+		if (isEmpty(deviceType))
+		{
+			$("#deviceTypeErrTip").html(controller.language.titles["deviceTypeNull"]);
+			return false;
+		}
+		
+		if (!isNumber(deviceType))
+		{
+			$("#deviceTypeErrTip").html(controller.language.titles["deviceTypeNotNumber"]);
+			return false;
+		}
+		
+		if (deviceType < 2 || deviceType > 4)
+		{
+			$("#deviceTypeErrTip").html(controller.language.titles["deviceTypeRangeError"]);
+			return false;
+		}
+		
+		if (isEmpty(fromIndex))
+		{
+			$("#fromIndexErrTip").html(controller.language.titles["fromIndexNull"]);
+			return false;
+		}
+		
+		if (!isNumber(fromIndex))
+		{
+			$("#fromIndexErrTip").html(controller.language.titles["fromIndexNotNumber"]);
+			return false;
+		}
+		
+		if (fromIndex < 1)
+		{
+			$("#fromIndexErrTip").html(controller.language.titles["fromIndexLtOne"]);
+			return false;
+		}
+		
+		if (isEmpty(toIndex))
+		{
+			$("#toIndexErrTip").html(controller.language.titles["toIndexNull"]);
+			return false;
+		}
+		
+		if (!isNumber(toIndex))
+		{
+			$("#toIndexErrTip").html(controller.language.titles["toIndexNotNumber"]);
+			return false;
+		}
+		
+		if (toIndex < 1)
+		{
+			$("#toIndexErrTip").html(controller.language.titles["toIndexltOne"]);
+			return false;
+		}
+		
+		if (parseInt(fromIndex) > parseInt(toIndex))
+		{
+			$("#fromIndexErrTip").html(controller.language.titles["fromIndexGttoIndex"]);
+			return false;
+		}
+		
+		$.ajax({
+			url : getServerPath()+"/deviceServlet",
+			type : "post",
+			dataType : "json",
+			data : "deviceType=" + deviceType + "&fromIndex=" + fromIndex + "&toIndex=" + toIndex + "&method=getDeviceList",
+			async : false,
+			success : function(data)
+			{
+				// 登录登出异常
+				if (null == data.resultCode)
+				{
+					$("#getDeviceList_resultCode").val(data);
+					$("#getDeviceList_status").html(controller.language.titles["operationFailed"]);
+				}
+				else
+				{
+					$("#getDeviceList_resultCode").val(data.resultCode);
+					if (deviceType==2)
+					{
+						// 摄像机列表
+						$("#deviceList").val(JSON.stringify(data.cameraBriefInfos));
+					}
+					else if (deviceType==3)
+					{
+						// 音频设备列表
+						$("#deviceList").val(JSON.stringify(data.audioBriefInfos));
+					}
+					else if (deviceType==4)
+					{
+						// 告警设备列表
+						$("#deviceList").val(JSON.stringify(data.alarmBriefInfos));
+					}
+					
+					if (0 == data.resultCode)
+					{
+						$("#getDeviceList_status").html(controller.language.titles["operationSuccess"]);
+					}
+					else
+					{
+						$("#getDeviceList_status").html(controller.language.titles["operationFailed"]);
+					}
+				}
+			},
+			error : function(data)
+			{
+				var res = data.responseText;
+				$("#getDeviceList_resultCode").val(res);
+				$("#deviceList").val("");
+				$("#getDeviceList_status").html(controller.language.titles["operationFailed"]);
+			},
+			beforeSend : function()
+			{
+				$("#getDeviceList_resultCode").val("");
+				$("#deviceList").val("");
+			}
+		});
+	}
+</script>

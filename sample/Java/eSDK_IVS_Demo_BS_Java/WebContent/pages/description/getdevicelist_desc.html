@@ -1,0 +1,536 @@
+<a name="top" class="a_anchor_top"></a>
+	<label class="description_label" style="font-weight: bold; color: #3575B9;" id="Function"></label><br/>
+	<label class="description_label" id="getdevicelistExFunctionDesc"></label><br/>
+	<label class="description_label" style="font-weight: bold; color: #3575B9;" id="Access"></label><br/>
+	<label class="description_label" id="getdevicelistExAccessDesc"></label><br/>
+
+<div class="description_input_div">
+	<!-- 输入参数描述 -->
+	<label class="description_label" id="inputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>deviceType</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="deviceTypeInputTd"></td>
+		</tr>
+		<tr>
+			<td>indexRange</td>
+			<td><a class="a_anchor" href="#IndexRange">IndexRange</a></td>
+			<td>1</td>
+			<td><label id="indexRangeInputTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- 返回参数描述 -->
+	<label class="description_label" id="outputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="outputParameterTd"></label></td>
+			<td width="20%"><label id="outputTypeTd"></label></td>
+			<td width="12%"><label id="outputRestrictionTd"></label></td>
+			<td width="48%"><label id="outputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>resultCode</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="resultCodeTd"></td>
+		</tr>
+		<tr>
+			<td>cameraBriefInfos</td>
+			<td><a class="a_anchor" href="#CameraBriefInfos">CameraBriefInfos</a></td>
+			<td>0..1</td>
+			<td><label id="cameraBriefInfosOutputTd"></td>
+		</tr>
+		<tr>
+			<td>audioBriefInfos</td>
+			<td><a class="a_anchor" href="#AudioBriefInfos">AudioBriefInfos</a></td>
+			<td>0..1</td>
+			<td><label id="audioBriefInfosOutputTd"></td>
+		</tr>
+		<tr>
+			<td>alarmBriefInfos</td>
+			<td><a class="a_anchor" href="#AlarmBriefInfos">AlarmBriefInfos</a></td>
+			<td>0..1</td>
+			<td><label id="alarmBriefInfosOutputTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- IndexRange描述 -->
+	<div class="left">
+		<label class="description_label"><a name="IndexRange">IndexRange:</a></label>
+	</div>
+	<div>
+		<a href="#top"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="indexRangeParameterTd"></label></td>
+			<td width="20%"><label id="indexRangeTypeTd"></label></td>
+			<td width="12%"><label id="indexRangeRestrictionTd"></label></td>
+			<td width="48%"><label id="indexRangeDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>fromIndex</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="fromIndex"></td>
+		</tr>
+		<tr>
+			<td>toIndex</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="toIndex"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- CameraBriefInfos描述 -->
+	<div class="left">
+		<label class="description_label"><a name="CameraBriefInfos">CameraBriefInfos:</a></label>
+	</div>
+	<div>
+		<a href="#top"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="cameraBriefInfosParameterTd"></label></td>
+			<td width="20%"><label id="cameraBriefInfosTypeTd"></label></td>
+			<td width="12%"><label id="cameraBriefInfosRestrictionTd"></label></td>
+			<td width="48%"><label id="cameraBriefInfosDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>total</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfosTotalTd"></td>
+		</tr>
+		<tr>
+			<td>indexRange</td>
+			<td><a class="a_anchor" href="#IndexRange">IndexRange</a></td>
+			<td>1</td>
+			<td><label id="cameraBriefInfosIndexRangeTd"></td>
+		</tr>
+		<tr>
+			<td>cameraBriefInfoList</td>
+			<td><a class="a_anchor" href="#CameraBriefInfoList">CameraBriefInfoList</a></td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoListTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- CameraBriefInfoList描述 -->
+	<div class="left">
+		<label class="description_label"><a name="CameraBriefInfoList">CameraBriefInfoList:</a></label>
+	</div>
+	<div>
+		<a href="#CameraBriefInfos"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="cameraBriefInfoListParameterTd"></label></td>
+			<td width="20%"><label id="cameraBriefInfoListTypeTd"></label></td>
+			<td width="12%"><label id="cameraBriefInfoListRestrictionTd"></label></td>
+			<td width="48%"><label id="cameraBriefInfoListDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>cameraBriefInfo</td>
+			<td><a class="a_anchor" href="#CameraBriefInfo">CameraBriefInfo</a></td>
+			<td>0..n</td>
+			<td><label id="cameraBriefInfoTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- CameraBriefInfo描述 -->
+	<div class="left">
+		<label class="description_label"><a name="CameraBriefInfo">CameraBriefInfo:</a></label>
+	</div>
+	<div>
+		<a href="#CameraBriefInfos"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="cameraBriefInfoParameterTd"></label></td>
+			<td width="20%"><label id="cameraBriefInfoTypeTd"></label></td>
+			<td width="12%"><label id="cameraBriefInfoRestrictionTd"></label></td>
+			<td width="48%"><label id="cameraBriefInfoDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>code</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoCodeTd"></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoNameTd"></td>
+		</tr>
+		<tr>
+			<td>deviceGroupCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoDeviceGroupCodeTd"></td>
+		</tr>
+		<tr>
+			<td>parentCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoParentCodeTd"></td>
+		</tr>
+		<tr>
+			<td>domainCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoDomainCodeTd"></td>
+		</tr>
+		<tr>
+			<td>deviceModelType</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoDeviceModelTypeTd"></td>
+		</tr>
+		<tr>
+			<td>vendorType</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoVendorTypeTd"></td>
+		</tr>
+		<tr>
+			<td>deviceFormType</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoDeviceFormTypeTd"></td>
+		</tr>
+		<tr>
+			<td>type</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoTypeParaTd"></td>
+		</tr>
+		<tr>
+			<td>cameraLocation</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoCameraLocationTd"></td>
+		</tr>
+		<tr>
+			<td>cameraStatus</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoCameraStatusTd"></td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoStatusTd"></td>
+		</tr>
+		<tr>
+			<td>netType</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoNetTypeTd"></td>
+		</tr>
+		<tr>
+			<td>isSupportIntelligent</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoIsSupportIntelligentTd"></td>
+		</tr>
+		<tr>
+			<td>enableVoice</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoEnableVoiceTd"></td>
+		</tr>
+		<tr>
+			<td>nvrCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoNvrCodeTd"></td>
+		</tr>
+		<tr>
+			<td>deviceCreateTime</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoDeviceCreateTimeTd"></td>
+		</tr>
+		<tr>
+			<td>isExDomain</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoIsExDomainTd"></td>
+		</tr>
+		<tr>
+			<td>deviceIP</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoDeviceIPTd"></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="cameraBriefInfoReserveTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AudioBriefInfos描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AudioBriefInfos">AudioBriefInfos:</a></label>
+	</div>
+	<div>
+		<a href="#top"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="audioBriefInfosParameterTd"></label></td>
+			<td width="20%"><label id="audioBriefInfosTypeTd"></label></td>
+			<td width="12%"><label id="audioBriefInfosRestrictionTd"></label></td>
+			<td width="48%"><label id="audioBriefInfosDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>total</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="audioBriefInfosTotalTd"></td>
+		</tr>
+		<tr>
+			<td>indexRange</td>
+			<td><a class="a_anchor" href="#IndexRange">IndexRange</a></td>
+			<td>1</td>
+			<td><label id="audioBriefInfosIndexRangeTd"></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="audioBriefInfosReserveTd"></td>
+		</tr>
+		<tr>
+			<td>audioBriefInfoList</td>
+			<td><a class="a_anchor" href="#AudioBriefInfoList">AudioBriefInfoList</a></td>
+			<td>1</td>
+			<td><label id="audioBriefInfoListTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AudioBriefInfoList描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AudioBriefInfoList">AudioBriefInfoList:</a></label>
+	</div>
+	<div>
+		<a href="#AudioBriefInfos"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="audioBriefInfoListParameterTd"></label></td>
+			<td width="20%"><label id="audioBriefInfoListTypeTd"></label></td>
+			<td width="12%"><label id="audioBriefInfoListRestrictionTd"></label></td>
+			<td width="48%"><label id="audioBriefInfoListDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>audioBriefInfo</td>
+			<td><a class="a_anchor" href="#AudioBriefInfo">AudioBriefInfo</a></td>
+			<td>0..n</td>
+			<td><label id="audioBriefInfoTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AudioBriefInfo描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AudioBriefInfo">AudioBriefInfo:</a></label>
+	</div>
+	<div>
+		<a href="#AudioBriefInfos"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="audioBriefInfoParameterTd"></label></td>
+			<td width="20%"><label id="audioBriefInfoTypeTd"></label></td>
+			<td width="12%"><label id="audioBriefInfoRestrictionTd"></label></td>
+			<td width="48%"><label id="audioBriefInfoDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>deviceGroupId</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="audioBriefInfoDeviceGroupIdTd"></td>
+		</tr>
+		<tr>
+			<td>audioCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="audioBriefInfoAudioCodeTd"></td>
+		</tr>
+		<tr>
+			<td>domainCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="audioBriefInfoDomainCodeTd"></td>
+		</tr>
+		<tr>
+			<td>audioName</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="audioBriefInfoAudioNameTd"></td>
+		</tr>
+		<tr>
+			<td>channelType</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id=audioBriefInfoChannelTypeTd></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="audioBriefInfoReserveTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AlarmBriefInfos描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AlarmBriefInfos">AlarmBriefInfos:</a></label>
+	</div>
+	<div>
+		<a href="#top"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="alarmBriefInfosParameterTd"></label></td>
+			<td width="20%"><label id="alarmBriefInfosTypeTd"></label></td>
+			<td width="12%"><label id="alarmBriefInfosRestrictionTd"></label></td>
+			<td width="48%"><label id="alarmBriefInfosDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>total</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfosTotalTd"></td>
+		</tr>
+		<tr>
+			<td>indexRange</td>
+			<td><a class="a_anchor" href="#IndexRange">IndexRange</a></td>
+			<td>1</td>
+			<td><label id="alarmBriefInfosIndexRangeTd"></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfosReserveTd"></td>
+		</tr>
+		<tr>
+			<td>alarmBriefInfoList</td>
+			<td><a class="a_anchor" href="#AlarmBriefInfoList">AlarmBriefInfoList</a></td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoListTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AlarmBriefInfoList描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AlarmBriefInfoList">AlarmBriefInfoList:</a></label>
+	</div>
+	<div>
+		<a href="#AlarmBriefInfos"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="alarmBriefInfoListParameterTd"></label></td>
+			<td width="20%"><label id="alarmBriefInfoListTypeTd"></label></td>
+			<td width="12%"><label id="alarmBriefInfoListRestrictionTd"></label></td>
+			<td width="48%"><label id="alarmBriefInfoListDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>alarmBriefInfo</td>
+			<td><a class="a_anchor" href="#AlarmBriefInfo">AlarmBriefInfo</a></td>
+			<td>0..n</td>
+			<td><label id="alarmBriefInfoTd"></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- AlarmBriefInfo描述 -->
+	<div class="left">
+		<label class="description_label"><a name="AlarmBriefInfo">AlarmBriefInfo:</a></label>
+	</div>
+	<div>
+		<a href="#AlarmBriefInfos"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="alarmBriefInfoParameterTd"></label></td>
+			<td width="20%"><label id="alarmBriefInfoTypeTd"></label></td>
+			<td width="12%"><label id="alarmBriefInfoRestrictionTd"></label></td>
+			<td width="48%"><label id="alarmBriefInfoDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>deviceGroupCode</td>
+			<td>Integer</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoDeviceGroupCodeTd"></td>
+		</tr>
+		<tr>
+			<td>alarmCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoAlarmCodeTd"></td>
+		</tr>
+		<tr>
+			<td>domainCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoDomainCodeTd"></td>
+		</tr>
+		<tr>
+			<td>alarmName</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoAlarmNameTd"></td>
+		</tr>
+		<tr>
+			<td>channelType</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id=alarmBriefInfoChannelTypeTd></td>
+		</tr>
+		<tr>
+			<td>parentCode</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoParentCodeTd"></td>
+		</tr>
+		<tr>
+			<td>isExDomain</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoIsExDomainTd"></td>
+		</tr>
+		<tr>
+			<td>reserve</td>
+			<td>String</td>
+			<td>1</td>
+			<td><label id="alarmBriefInfoReserveTd"></td>
+		</tr>
+	</table>
+</div>
