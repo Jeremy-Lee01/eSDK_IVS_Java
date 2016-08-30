@@ -1,6 +1,7 @@
-## eSDK\_IVS\_SDK\_Windows  ##
+## eSDK\_IVS\_SDK\_Java  ##
 华为VCN3000(Video Cloud Node)是基于行业视频监控业务需求，结合华为eSpace IVS智能视频监控平台和专业存储产品而定制开发的一体化智能视频监控产品，具有高度集成、安全可靠、开放易集成特点。华为VCN3000集实时监控、录像检索、录像回放、云镜控制、告警联动、语音对讲等多种视频监控业务于一身，并可配套IVS转码服务器提供移动监控业务，为政府、交通、教育部门及不同规模的企业客户构建安全、便捷、实用的系列化视频监控产品解决方案。
-华为视频监控**eSDK\_IVS\_SDK\_Windows**提供基于Windows动态库标准化API接口和OCX控件，为您提供用户管理、设备管理、告警管理、实时浏览、视频录像、实时语音、智能分析、电视墙等业务集成能力。
+
+华为视频监控**eSDK\_IVS\_SDK\_Java**提供基于Windows动态库标准化API接口和OCX控件，为您提供用户管理、设备管理、告警管理、实时浏览、视频录像、实时语音、智能分析、电视墙等业务集成能力。
 
 ## 版本更新 ##
 eSDK IVS最新版本v1.5.70
@@ -13,7 +14,7 @@ eSDK IVS最新版本v1.5.70
 
 ## 文件指引 ##
 
-- src文件夹：eSDK\_IVS\_SDK\_Windows源码
+- src文件夹：eSDK\_IVS\_SDK\_Java源码
 - sample文件夹：eSDK IVS SDK的代码样例
 - doc：eSDK IVS SDK的接口参考、开发指南
 - third-party:eSDK IVS SDK中使用的第三方库
@@ -36,9 +37,9 @@ eSDK IVS最新版本v1.5.70
 
     Step1：填充配置文件esdk_ivs_config.properties
         sdkserver.url=http://172.24.4.205:8086/esdk/services
-	Step2：编写代码
+    Step2：编写代码
         //Username
-		String userName = "admin";
+    	String userName = "admin";
         //Password
 		String pwd = "Huawei@123";
         
